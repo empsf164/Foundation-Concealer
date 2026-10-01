@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Photo Reviews — TONE / FORM | Real Complexion Experiences</title>
+  <meta name="description" content="Explore real customer photo reviews of TONE / FORM foundations and concealers. Filter by skin depth, undertone, finish, and wear experience.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- =========================================================================
+       MANDATORY STICKY NAVBAR
+       ========================================================================= -->
+  <nav class="navbar navbar-expand-xl tf-navbar" id="main-nav">
+    <div class="container-xl">
+      <!-- Brand Logo -->
+      <a class="navbar-brand navbar-brand-logo" href="index.html">
+        <svg class="brand-logo-icon" width="26" height="26" viewBox="0 0 48 48" fill="none">
+          <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
+          <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
+          <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+        </svg>
+        <span>TONE <span class="divider">/</span> FORM</span>
+      </a>
+
+      <!-- Mobile Controls (Theme Toggle + Hamburger) -->
+      <div class="d-flex align-items-center gap-2 d-xl-none">
+        <button class="btn-theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#tfNavbarNav" aria-controls="tfNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2 text-primary"></i>
+        </button>
+      </div>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="tfNavbarNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="index.html">Home</a>
+          </li>
+          
+          <!-- Shop Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link tf-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="shopDropdown">
+              Shop
+            </a>
+            <ul class="dropdown-menu tf-dropdown-menu" aria-labelledby="shopDropdown">
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=foundation">Foundation <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=concealer">Concealer <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=sets">Foundation + Concealer Sets <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><hr class="dropdown-divider my-1"></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?filter=new">New Arrivals <span class="badge bg-secondary-subtle text-secondary font-tech">2026</span></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?filter=bestsellers">Best Sellers <i class="bi bi-stars text-accent"></i></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="undertone-analyzer.html">Undertone Analyzer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="kit-builder.html">Kit Builder</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="dashboard.html">Dashboard</a>
+          </li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <!-- Desktop Theme Toggle -->
+          <button class="btn-theme-toggle d-none d-xl-inline-flex" type="button" aria-label="Toggle light or dark theme" title="Toggle theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+          
+          <a href="signup.html" class="btn-tf-outline btn-tf-sm">Sign Up</a>
+          <a href="shade-match.html" class="btn-tf-accent btn-tf-sm">Find My Shade</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="section-padding-sm bg-surface border-bottom border-tf">
+    <div class="container-xl">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-lg-7">
+          <span class="editorial-tag">Authentic Skin Perspectives</span>
+          <h1 class="editorial-title mb-2">Customer Photo Reviews</h1>
+          <p class="editorial-subtitle mb-0">
+            Real portraits across inclusive skin depths. See how TONE / FORM formulas look in real light on real faces. (Fictional customer demo gallery).
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+          <button class="btn-tf-primary" data-bs-toggle="modal" data-bs-target="#writeReviewModal">
+            <i class="bi bi-pencil-square me-1"></i> Write a Demo Review
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Reviews Application & Gallery -->
+  <main class="section-padding" id="reviews-gallery-app">
+    <div class="container-xl">
+      
+      <!-- Filter Toolbar -->
+      <div class="card p-3 border-tf bg-surface rounded-4 mb-5">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+          <!-- Depth Filter Buttons -->
+          <div class="d-flex flex-wrap gap-2">
+            <span class="font-tech small text-muted-tf align-self-center me-2">Skin Depth:</span>
+            <button class="btn-tf-outline btn-tf-sm review-filter-btn active" data-filter-depth="all">All Depths</button>
+            <button class="btn-tf-outline btn-tf-sm review-filter-btn" data-filter-depth="fair">Fair (100–200)</button>
+            <button class="btn-tf-outline btn-tf-sm review-filter-btn" data-filter-depth="medium">Medium (300–400)</button>
+            <button class="btn-tf-outline btn-tf-sm review-filter-btn" data-filter-depth="tan">Tan (500)</button>
+            <button class="btn-tf-outline btn-tf-sm review-filter-btn" data-filter-depth="deep">Deep (600–700)</button>
+          </div>
+
+          <!-- Rating Summary Badge -->
+          <div class="d-flex align-items-center gap-2">
+            <div class="star-rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+            </div>
+            <span class="font-tech fw-bold text-primary">4.9 / 5.0 Average</span>
+            <span class="small text-muted-tf">(420+ Demo Reviews)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Masonry Editorial Gallery -->
+      <div class="row g-4" id="reviews-grid">
+        
+        <!-- Review Card 1: Fair -->
+        <div class="col-md-6 col-lg-4 review-item-col" data-depth="fair">
+          <div class="review-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <img src="assets/images/reviews/review-fair.jpg" alt="Reviewer Elena M." class="review-customer-img">
+              <div>
+                <h5 class="mb-0">Elena M.</h5>
+                <div class="star-rating my-1">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <span class="badge font-tech" style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Fictional Demo Review</span>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="review-shade-tag"><span class="swatch-chip" style="background-color: #ECCBB2; width: 10px; height: 10px;"></span> F220 Neutral Bisque</span>
+              <span class="review-shade-tag">Concealer: C18</span>
+              <span class="review-shade-tag">Finish: Luminous</span>
+            </div>
+
+            <p class="text-muted-tf small mb-0">
+              "Natural finish and surprisingly easy to blend. I've always struggled with foundations looking chalky on my dry cheeks, but this melds instantly. Looks just like hydrated skin."
+            </p>
+          </div>
+        </div>
+
+        <!-- Review Card 2: Medium -->
+        <div class="col-md-6 col-lg-4 review-item-col" data-depth="medium">
+          <div class="review-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <img src="assets/images/reviews/review-medium.jpg" alt="Reviewer Sarah L." class="review-customer-img">
+              <div>
+                <h5 class="mb-0">Sarah L.</h5>
+                <div class="star-rating my-1">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <span class="badge font-tech" style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Fictional Demo Review</span>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="review-shade-tag"><span class="swatch-chip" style="background-color: #C69472; width: 10px; height: 10px;"></span> M420 Warm Neutral 320</span>
+              <span class="review-shade-tag">Concealer: C36</span>
+              <span class="review-shade-tag">Finish: Luminous</span>
+            </div>
+
+            <p class="text-muted-tf small mb-0">
+              "The undertone recommendation was spot on. Warm tones usually turn orange on me after a few hours, but this holds true golden balance all day through office lights and sunlight."
+            </p>
+          </div>
+        </div>
+
+        <!-- Review Card 3: Tan -->
+        <div class="col-md-6 col-lg-4 review-item-col" data-depth="tan">
+          <div class="review-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <img src="assets/images/reviews/review-tan.jpg" alt="Reviewer Priya K." class="review-customer-img">
+              <div>
+                <h5 class="mb-0">Priya K.</h5>
+                <div class="star-rating my-1">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <span class="badge font-tech" style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Fictional Demo Review</span>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="review-shade-tag"><span class="swatch-chip" style="background-color: #A7704C; width: 10px; height: 10px;"></span> T520 Neutral Toffee</span>
+              <span class="review-shade-tag">Concealer: C48</span>
+              <span class="review-shade-tag">Finish: Velvet Matte</span>
+            </div>
+
+            <p class="text-muted-tf small mb-0">
+              "Finally a foundation and concealer pair that doesn't crease under the eyes or settle into fine smile lines. The concealer wand provides the exact amount of product needed."
+            </p>
+          </div>
+        </div>
+
+        <!-- Review Card 4: Deep -->
+        <div class="col-md-6 col-lg-4 review-item-col" data-depth="deep">
+          <div class="review-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <img src="assets/images/reviews/review-deep.jpg" alt="Reviewer Amara D." class="review-customer-img">
+              <div>
+                <h5 class="mb-0">Amara D.</h5>
+                <div class="star-rating my-1">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <span class="badge font-tech" style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Fictional Demo Review</span>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="review-shade-tag"><span class="swatch-chip" style="background-color: #7D4C30; width: 10px; height: 10px;"></span> D620 Neutral Cacao</span>
+              <span class="review-shade-tag">Concealer: C62</span>
+              <span class="review-shade-tag">Finish: Demi-Matte</span>
+            </div>
+
+            <p class="text-muted-tf small mb-0">
+              "Zero ashy cast in flash photos. The rich red-neutral undertone is formulated with obvious respect for deep skin depths. It stays vibrant without oxidizing dark."
+            </p>
+          </div>
+        </div>
+
+        <!-- Review Card 5: Rich Deep -->
+        <div class="col-md-6 col-lg-4 review-item-col" data-depth="deep">
+          <div class="review-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <img src="assets/images/reviews/review-rich.jpg" alt="Reviewer Zainab T." class="review-customer-img">
+              <div>
+                <h5 class="mb-0">Zainab T.</h5>
+                <div class="star-rating my-1">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <span class="badge font-tech" style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Fictional Demo Review</span>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="review-shade-tag"><span class="swatch-chip" style="background-color: #543220; width: 10px; height: 10px;"></span> R720 Neutral Mahogany</span>
+              <span class="review-shade-tag">Concealer: C74</span>
+              <span class="review-shade-tag">Finish: Natural Luminous</span>
+            </div>
+
+            <p class="text-muted-tf small mb-0">
+              "The most flattering deep shade I have ever worn. The blue-neutral undertone eliminates grayness completely and allows my natural cheek highlights to glow through."
+            </p>
+          </div>
+        </div>
+
+        <!-- Review Card 6: Fair Light -->
+        <div class="col-md-6 col-lg-4 review-item-col" data-depth="fair">
+          <div class="review-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <img src="assets/images/hero/hero-editorial.jpg" alt="Reviewer Chloe B." class="review-customer-img">
+              <div>
+                <h5 class="mb-0">Chloe B.</h5>
+                <div class="star-rating my-1">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <span class="badge font-tech" style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Fictional Demo Review</span>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="review-shade-tag"><span class="swatch-chip" style="background-color: #F1D6C1; width: 10px; height: 10px;"></span> F130 Warm Porcelain</span>
+              <span class="review-shade-tag">Concealer: C10</span>
+              <span class="review-shade-tag">Finish: Radiant</span>
+            </div>
+
+            <p class="text-muted-tf small mb-0">
+              "Buildable without caking. I use one pump for day work and two pumps for evening dinners. Completely seamless match with my neck."
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Load More Button (Demo action) -->
+      <div class="text-center mt-5">
+        <button class="btn-tf-outline" onclick="alert('Demo: All current customer photo reviews are loaded.')">
+          <i class="bi bi-arrow-clockwise me-1"></i> Load More Reviews
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Write Review Modal (Front-End Demo) -->
+  <div class="modal fade" id="writeReviewModal" tabindex="-1" aria-labelledby="writeReviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-tf">
+        <div class="modal-header modal-header-tf">
+          <h5 class="modal-title font-display" id="writeReviewModalLabel">Share Your Complexion Story</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="write-review-form">
+            <div class="mb-3">
+              <label for="rev-name" class="form-label-tf">First Name</label>
+              <input type="text" class="form-control-tf" id="rev-name" placeholder="e.g. Maya" required>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label for="rev-f-shade" class="form-label-tf">Foundation Shade</label>
+                <select class="form-select-tf" id="rev-f-shade" required>
+                  <option value="">Select Shade</option>
+                  <option value="F120">F120 Neutral Ivory</option>
+                  <option value="F220">F220 Neutral Bisque</option>
+                  <option value="L320">L320 Warm Sand</option>
+                  <option value="M420">M420 Warm Neutral 320</option>
+                  <option value="T520">T520 Neutral Toffee</option>
+                  <option value="D620">D620 Neutral Cacao</option>
+                  <option value="R720">R720 Neutral Mahogany</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label for="rev-c-shade" class="form-label-tf">Concealer Shade</label>
+                <select class="form-select-tf" id="rev-c-shade" required>
+                  <option value="">Select Concealer</option>
+                  <option value="C10">C10 Porcelain</option>
+                  <option value="C18">C18 Light Shell</option>
+                  <option value="C28">C28 Soft Sand</option>
+                  <option value="C36">C36 Honey Sand</option>
+                  <option value="C48">C48 Warm Almond</option>
+                  <option value="C62">C62 Rich Mocha</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label-tf">Rating</label>
+              <div class="d-flex gap-2 text-warning fs-5">
+                <i class="bi bi-star-fill cursor-pointer"></i>
+                <i class="bi bi-star-fill cursor-pointer"></i>
+                <i class="bi bi-star-fill cursor-pointer"></i>
+                <i class="bi bi-star-fill cursor-pointer"></i>
+                <i class="bi bi-star-fill cursor-pointer"></i>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="rev-text" class="form-label-tf">Your Experience</label>
+              <textarea class="form-control-tf" id="rev-text" rows="3" placeholder="Describe the blendability, wear time, and undertone accuracy..." required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label-tf">Upload Photo (Demo)</label>
+              <input type="file" class="form-control-tf" accept="image/*">
+              <span class="small text-muted-tf">High natural daylight portraits work best.</span>
+            </div>
+
+            <button type="submit" class="btn-tf-primary w-100 py-2">
+              Submit Review (Demo)
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- =========================================================================
+       MANDATORY FOOTER
+       ========================================================================= -->
+  <footer class="tf-footer">
+    <div class="container-xl">
+      <div class="row g-4">
+        <!-- Column 1: Brand & Social -->
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center mb-2">
+            <a class="navbar-brand navbar-brand-logo d-inline-flex align-items-center gap-2 text-nowrap" href="index.html">
+              <svg class="brand-logo-icon" width="26" height="26" viewBox="0 0 48 48" fill="none">
+                <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
+                <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
+                <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+              </svg>
+              <span>TONE <span class="divider">/</span> FORM</span>
+            </a>
+          </div>
+          <p class="footer-brand-tagline">
+            "Your Shade. Your Match. Your Finish."
+          </p>
+
+          <!-- Social Icons in Footer -->
+          <div class="footer-social-links">
+            <a href="#" class="btn-social-icon" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="TikTok" title="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="YouTube" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="Pinterest" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+          </div>
+
+          <p class="small text-muted-tf mt-3">
+            Fictional demo brand exploring the convergence of luxury cosmetics, undertone technology, and personalized complexion design.
+          </p>
+        </div>
+
+        <!-- Column 2: Shop -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer-heading">Shop</h6>
+          <ul class="footer-link-list">
+            <li><a href="shop.html?category=foundation">Foundation</a></li>
+            <li><a href="shop.html?category=concealer">Concealer</a></li>
+            <li><a href="shop.html?category=sets">Sets</a></li>
+            <li><a href="shade-match.html">Shade Match</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Discover -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer-heading">Discover</h6>
+          <ul class="footer-link-list">
+            <li><a href="undertone-analyzer.html">Undertone Analyzer</a></li>
+            <li><a href="kit-builder.html">Kit Builder</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Account & Internal -->
+        <div class="col-lg-4 col-md-6">
+          <h6 class="footer-heading">Account & Operations</h6>
+          <ul class="footer-link-list">
+            <li><a href="login.html">Customer Login</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+            <li><a href="dashboard.html"><i class="bi bi-shield-lock me-1 text-accent"></i> Inventory Dashboard</a></li>
+            <li><a href="documentation/index.html"><i class="bi bi-file-earmark-code me-1"></i> Template Documentation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+        <div>
+          &copy; 2026 TONE / FORM. All rights reserved. Demo beauty-tech commercial template.
+        </div>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="#" class="text-muted-tf">Privacy</a>
+          <a href="#" class="text-muted-tf">Terms</a>
+          <a href="#" class="text-muted-tf">Shipping</a>
+          <a href="#" class="text-muted-tf">Returns</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

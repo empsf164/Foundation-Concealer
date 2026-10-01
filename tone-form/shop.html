@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Foundation & Concealer — TONE / FORM | Personalized Complexion</title>
+  <meta name="description" content="Explore TONE / FORM's collection of fluid foundations, precision concealers, and base kits. Filter by undertone, coverage, and skin depth.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- =========================================================================
+       MANDATORY STICKY NAVBAR
+       ========================================================================= -->
+  <nav class="navbar navbar-expand-xl tf-navbar" id="main-nav">
+    <div class="container-xl">
+      <!-- Brand Logo -->
+      <a class="navbar-brand navbar-brand-logo" href="index.html">
+        <svg class="brand-logo-icon" width="26" height="26" viewBox="0 0 48 48" fill="none">
+          <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
+          <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
+          <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+        </svg>
+        <span>TONE <span class="divider">/</span> FORM</span>
+      </a>
+
+      <!-- Mobile Controls (Theme Toggle + Hamburger) -->
+      <div class="d-flex align-items-center gap-2 d-xl-none">
+        <button class="btn-theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#tfNavbarNav" aria-controls="tfNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2 text-primary"></i>
+        </button>
+      </div>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="tfNavbarNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="index.html">Home</a>
+          </li>
+          
+          <!-- Shop Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link tf-nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="shopDropdown">
+              Shop
+            </a>
+            <ul class="dropdown-menu tf-dropdown-menu" aria-labelledby="shopDropdown">
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=foundation">Foundation <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=concealer">Concealer <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=sets">Foundation + Concealer Sets <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><hr class="dropdown-divider my-1"></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?filter=new">New Arrivals <span class="badge bg-secondary-subtle text-secondary font-tech">2026</span></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?filter=bestsellers">Best Sellers <i class="bi bi-stars text-accent"></i></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="undertone-analyzer.html">Undertone Analyzer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="kit-builder.html">Kit Builder</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="dashboard.html">Dashboard</a>
+          </li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <!-- Desktop Theme Toggle -->
+          <button class="btn-theme-toggle d-none d-xl-inline-flex" type="button" aria-label="Toggle light or dark theme" title="Toggle theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+          
+          <a href="signup.html" class="btn-tf-outline btn-tf-sm">Sign Up</a>
+          <a href="shade-match.html" class="btn-tf-accent btn-tf-sm">Find My Shade</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Shop Header -->
+  <header class="section-padding-sm bg-surface border-bottom border-tf">
+    <div class="container-xl">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-lg-7">
+          <span class="editorial-tag">Complexion Catalogue</span>
+          <h1 class="editorial-title mb-2">Shop Foundation & Concealer</h1>
+          <p class="editorial-subtitle mb-0">
+            Formulations engineered to balance skin depth and undertone vibrancy without mask-like heaviness.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+          <a href="shade-match.html" class="btn-tf-primary">
+            <i class="bi bi-magic me-1"></i> Match My Shade First
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Shop Application -->
+  <main class="section-padding" id="shop-catalogue-app">
+    <div class="container-xl">
+      
+      <!-- Primary Category Tabs & Filter Toolbar -->
+      <div class="card p-3 border-tf bg-surface rounded-4 mb-4">
+        <div class="row g-3 align-items-center justify-content-between">
+          <!-- Type Filter Tabs -->
+          <div class="col-lg-5">
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn-tf-outline btn-tf-sm filter-type-btn active" data-type="all">All Formulations</button>
+              <button class="btn-tf-outline btn-tf-sm filter-type-btn" data-type="foundation">Foundation</button>
+              <button class="btn-tf-outline btn-tf-sm filter-type-btn" data-type="concealer">Concealer</button>
+              <button class="btn-tf-outline btn-tf-sm filter-type-btn" data-type="sets">Sets & Kits</button>
+            </div>
+          </div>
+
+          <!-- Secondary Filter Dropdowns -->
+          <div class="col-lg-7">
+            <div class="row g-2 justify-content-lg-end align-items-center">
+              <div class="col-sm-3 col-6">
+                <select class="form-select-tf form-select-sm" id="filter-undertone" aria-label="Filter by Undertone">
+                  <option value="all">Undertone: All</option>
+                  <option value="cool">Cool (C)</option>
+                  <option value="neutral">Neutral (N)</option>
+                  <option value="warm">Warm (W)</option>
+                  <option value="olive">Olive (O)</option>
+                </select>
+              </div>
+
+              <div class="col-sm-3 col-6">
+                <select class="form-select-tf form-select-sm" id="filter-finish" aria-label="Filter by Finish">
+                  <option value="all">Finish: All</option>
+                  <option value="luminous">Natural Luminous</option>
+                  <option value="matte">Velvet Demi-Matte</option>
+                  <option value="radiant">Dewy Radiant</option>
+                </select>
+              </div>
+
+              <div class="col-sm-3 col-6">
+                <select class="form-select-tf form-select-sm" id="filter-coverage" aria-label="Filter by Coverage">
+                  <option value="all">Coverage: All</option>
+                  <option value="medium">Medium Buildable</option>
+                  <option value="full">Full Coverage</option>
+                  <option value="light">Light Sheer</option>
+                </select>
+              </div>
+
+              <div class="col-sm-3 col-6">
+                <select class="form-select-tf form-select-sm" id="sort-products" aria-label="Sort products">
+                  <option value="recommended">Sort: Recommended</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Count Info -->
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <span class="font-tech text-muted-tf small" id="product-match-count">6 Products Available</span>
+        <span class="small text-muted-tf"><i class="bi bi-shield-check text-accent me-1"></i> Front-end Demo Catalogue</span>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="row g-4" id="products-grid">
+        
+        <!-- Product 1: Tone Balance Fluid Foundation -->
+        <div class="col-md-6 col-lg-4 product-shop-col" data-product-type="foundation" data-undertone="cool neutral warm olive" data-finish="luminous" data-coverage="medium" data-price="48">
+          <div class="product-card">
+            <div class="product-card-img-wrap">
+              <span class="product-card-badge">Best Seller</span>
+              <img src="assets/images/foundation/foundation-bottle.jpg" alt="Tone Balance Fluid Foundation">
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span>Medium Buildable</span> • <span>Natural Luminous</span>
+              </div>
+              <h3 class="product-card-title"><a href="product-details.html?id=foundation-1">Tone Balance Fluid Foundation</a></h3>
+              <p class="text-muted-tf small mb-3">
+                Breathable fluid foundation with optical pigments that adapt naturally to skin warmth.
+              </p>
+              
+              <!-- Shade swatches with real codes -->
+              <div class="mb-3">
+                <div class="small fw-bold text-primary mb-1">
+                  Selected: <span class="selected-shade-name font-tech text-accent">N120 Neutral Beige</span>
+                </div>
+                <div class="swatch-group">
+                  <button class="swatch-chip active" style="background-color: #F4E2D2;" data-shade-code="N120" data-shade-name="N120 Neutral Beige" title="N120 Neutral Beige" aria-label="Shade N120"></button>
+                  <button class="swatch-chip" style="background-color: #E2C2A4;" data-shade-code="W240" data-shade-name="W240 Warm Sand" title="W240 Warm Sand" aria-label="Shade W240"></button>
+                  <button class="swatch-chip" style="background-color: #C89975;" data-shade-code="C310" data-shade-name="C310 Cool Tan" title="C310 Cool Tan" aria-label="Shade C310"></button>
+                  <button class="swatch-chip" style="background-color: #A36F49;" data-shade-code="W430" data-shade-name="W430 Warm Amber" title="W430 Warm Amber" aria-label="Shade W430"></button>
+                  <button class="swatch-chip" style="background-color: #6F432B;" data-shade-code="D620" data-shade-name="D620 Neutral Cacao" title="D620 Neutral Cacao" aria-label="Shade D620"></button>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-tf mt-auto">
+                <div class="product-price">$48</div>
+                <div class="d-flex gap-2">
+                  <button class="btn-tf-outline btn-tf-sm" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-prod-title="Tone Balance Fluid Foundation" data-prod-price="$48">Quick View</button>
+                  <a href="product-details.html?id=foundation-1" class="btn-tf-primary btn-tf-sm">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Radiant Precision Concealer -->
+        <div class="col-md-6 col-lg-4 product-shop-col" data-product-type="concealer" data-undertone="cool neutral warm olive" data-finish="radiant" data-coverage="full" data-price="32">
+          <div class="product-card">
+            <div class="product-card-img-wrap">
+              <span class="product-card-badge">Concealer</span>
+              <img src="assets/images/concealer/concealer-tube.jpg" alt="Radiant Precision Concealer">
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span>Full Coverage</span> • <span>Dewy Radiant</span>
+              </div>
+              <h3 class="product-card-title"><a href="product-details.html?id=concealer-1">Radiant Precision Concealer</a></h3>
+              <p class="text-muted-tf small mb-3">
+                High-pigment, crease-defying formula designed for undereye brightening and target spot correction.
+              </p>
+
+              <div class="mb-3">
+                <div class="small fw-bold text-primary mb-1">
+                  Selected: <span class="selected-shade-name font-tech text-accent">C28 Soft Sand</span>
+                </div>
+                <div class="swatch-group">
+                  <button class="swatch-chip" style="background-color: #F8E8DD;" data-shade-code="C10" data-shade-name="C10 Cool Porcelain" title="C10 Cool Porcelain" aria-label="Shade C10"></button>
+                  <button class="swatch-chip active" style="background-color: #E2BFA6;" data-shade-code="C28" data-shade-name="C28 Soft Sand" title="C28 Soft Sand" aria-label="Shade C28"></button>
+                  <button class="swatch-chip" style="background-color: #CDA081;" data-shade-code="C36" data-shade-name="C36 Warm Almond" title="C36 Warm Almond" aria-label="Shade C36"></button>
+                  <button class="swatch-chip" style="background-color: #845337;" data-shade-code="C62" data-shade-name="C62 Rich Mocha" title="C62 Rich Mocha" aria-label="Shade C62"></button>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-tf mt-auto">
+                <div class="product-price">$32</div>
+                <div class="d-flex gap-2">
+                  <button class="btn-tf-outline btn-tf-sm" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-prod-title="Radiant Precision Concealer" data-prod-price="$32">Quick View</button>
+                  <a href="product-details.html?id=concealer-1" class="btn-tf-primary btn-tf-sm">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: The Calibrated Base Kit -->
+        <div class="col-md-6 col-lg-4 product-shop-col" data-product-type="sets" data-undertone="cool neutral warm olive" data-finish="luminous" data-coverage="medium" data-price="92">
+          <div class="product-card">
+            <div class="product-card-img-wrap">
+              <span class="product-card-badge">Set • Save 15%</span>
+              <img src="assets/images/foundation/kit-flatlay.jpg" alt="The Calibrated Base Kit">
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span>Custom Set</span> • <span>Foundation + Concealer + Powder</span>
+              </div>
+              <h3 class="product-card-title"><a href="kit-builder.html">The Calibrated Base Kit</a></h3>
+              <p class="text-muted-tf small mb-3">
+                Full synchronized complexion regimen. Choose your foundation shade, matched concealer, and setting essential.
+              </p>
+
+              <div class="mb-3">
+                <div class="small fw-bold text-primary mb-1">
+                  Includes: <span class="font-tech text-accent">3 Full Size Essentials</span>
+                </div>
+                <div class="small text-muted-tf">
+                  Fluid Foundation (30ml) + Concealer (8ml) + Translucent Compact.
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-tf mt-auto">
+                <div>
+                  <span class="text-decoration-line-through text-muted-tf small">$108</span>
+                  <div class="product-price">$92</div>
+                </div>
+                <a href="kit-builder.html" class="btn-tf-accent btn-tf-sm">Build My Kit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: Velvet Soft-Matte Foundation -->
+        <div class="col-md-6 col-lg-4 product-shop-col" data-product-type="foundation" data-undertone="warm neutral" data-finish="matte" data-coverage="full" data-price="50">
+          <div class="product-card">
+            <div class="product-card-img-wrap">
+              <span class="product-card-badge">New Arrival</span>
+              <img src="assets/images/foundation/foundation-swatch.jpg" alt="Velvet Soft-Matte Foundation">
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span>Full Coverage</span> • <span>Velvet Demi-Matte</span>
+              </div>
+              <h3 class="product-card-title"><a href="product-details.html?id=foundation-matte">Velvet Soft-Matte Foundation</a></h3>
+              <p class="text-muted-tf small mb-3">
+                Oil-controlling yet non-drying foundation for 16-hour shine resistance with soft diffused focus.
+              </p>
+
+              <div class="mb-3">
+                <div class="small fw-bold text-primary mb-1">
+                  Selected: <span class="selected-shade-name font-tech text-accent">W230 Warm Linen</span>
+                </div>
+                <div class="swatch-group">
+                  <button class="swatch-chip" style="background-color: #F1D6C1;" data-shade-code="F130" data-shade-name="F130 Warm Porcelain" title="F130" aria-label="Shade F130"></button>
+                  <button class="swatch-chip active" style="background-color: #DDB491;" data-shade-code="W230" data-shade-name="W230 Warm Linen" title="W230" aria-label="Shade W230"></button>
+                  <button class="swatch-chip" style="background-color: #C08D64;" data-shade-code="M430" data-shade-name="M430 Warm Amber" title="M430" aria-label="Shade M430"></button>
+                  <button class="swatch-chip" style="background-color: #553322;" data-shade-code="R730" data-shade-name="R730 Warm Jasper" title="R730" aria-label="Shade R730"></button>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-tf mt-auto">
+                <div class="product-price">$50</div>
+                <div class="d-flex gap-2">
+                  <button class="btn-tf-outline btn-tf-sm" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-prod-title="Velvet Soft-Matte Foundation" data-prod-price="$50">Quick View</button>
+                  <a href="product-details.html?id=foundation-matte" class="btn-tf-primary btn-tf-sm">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5: Luminous Serum Concealer -->
+        <div class="col-md-6 col-lg-4 product-shop-col" data-product-type="concealer" data-undertone="cool neutral" data-finish="luminous" data-coverage="medium" data-price="30">
+          <div class="product-card">
+            <div class="product-card-img-wrap">
+              <span class="product-card-badge">Serum Formula</span>
+              <img src="assets/images/concealer/concealer-swatch.jpg" alt="Luminous Serum Concealer">
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span>Medium Coverage</span> • <span>Natural Luminous</span>
+              </div>
+              <h3 class="product-card-title"><a href="product-details.html?id=concealer-serum">Luminous Serum Concealer</a></h3>
+              <p class="text-muted-tf small mb-3">
+                Peptide-enriched serum texture that hydrates tired eye zones while canceling darkness without cakey buildup.
+              </p>
+
+              <div class="mb-3">
+                <div class="small fw-bold text-primary mb-1">
+                  Selected: <span class="selected-shade-name font-tech text-accent">N120 Neutral Ivory</span>
+                </div>
+                <div class="swatch-group">
+                  <button class="swatch-chip active" style="background-color: #F8E5D7;" data-shade-code="N120" data-shade-name="N120 Neutral Ivory" title="N120" aria-label="Shade N120"></button>
+                  <button class="swatch-chip" style="background-color: #ECC7AB;" data-shade-code="N220" data-shade-name="N220 Neutral Shell" title="N220" aria-label="Shade N220"></button>
+                  <button class="swatch-chip" style="background-color: #BF8B66;" data-shade-code="N420" data-shade-name="N420 Neutral Honey" title="N420" aria-label="Shade N420"></button>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-tf mt-auto">
+                <div class="product-price">$30</div>
+                <div class="d-flex gap-2">
+                  <button class="btn-tf-outline btn-tf-sm" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-prod-title="Luminous Serum Concealer" data-prod-price="$30">Quick View</button>
+                  <a href="product-details.html?id=concealer-serum" class="btn-tf-primary btn-tf-sm">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6: The Quick Touch Duo -->
+        <div class="col-md-6 col-lg-4 product-shop-col" data-product-type="sets" data-undertone="cool neutral warm" data-finish="radiant" data-coverage="full" data-price="72">
+          <div class="product-card">
+            <div class="product-card-img-wrap">
+              <span class="product-card-badge">Set</span>
+              <img src="assets/images/foundation/kit-flatlay.jpg" alt="The Quick Touch Duo">
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span>Duo Pair</span> • <span>Foundation + Concealer</span>
+              </div>
+              <h3 class="product-card-title"><a href="kit-builder.html">The Precision Base Duo</a></h3>
+              <p class="text-muted-tf small mb-3">
+                The core match: one full-size foundation of your choice paired with its sister concealer match.
+              </p>
+
+              <div class="mb-3">
+                <div class="small fw-bold text-primary mb-1">
+                  Pairing: <span class="font-tech text-accent">Auto-Calibrated Sister Shades</span>
+                </div>
+                <div class="small text-muted-tf">
+                  Includes personalized undertone coordination guide card.
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-tf mt-auto">
+                <div>
+                  <span class="text-decoration-line-through text-muted-tf small">$80</span>
+                  <div class="product-price">$72</div>
+                </div>
+                <a href="kit-builder.html" class="btn-tf-accent btn-tf-sm">Customize Duo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Quick View Modal (Front-end Demo) -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-tf">
+        <div class="modal-header modal-header-tf">
+          <h5 class="modal-title font-display" id="quickViewModalLabel">Product Quick View</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="row g-3 align-items-center">
+            <div class="col-sm-5">
+              <img src="assets/images/foundation/foundation-bottle.jpg" alt="Product closeup" class="rounded-3 img-fluid border border-tf">
+            </div>
+            <div class="col-sm-7">
+              <span class="badge bg-surface text-accent font-tech mb-2">TONE / FORM LAB</span>
+              <h4 class="mb-1" id="modal-quick-title">Tone Balance Fluid Foundation</h4>
+              <div class="font-tech fw-bold text-accent fs-5 mb-2" id="modal-quick-price">$48</div>
+              <p class="text-muted-tf small mb-3">
+                Formulated with skin-syncing light refractors. Safe for sensitive skin types, free from synthetic fragrance.
+              </p>
+              <div class="d-flex gap-2">
+                <a href="product-details.html" class="btn-tf-primary btn-tf-sm">Full Product Page</a>
+                <a href="shade-match.html" class="btn-tf-outline btn-tf-sm">Match Shade</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- =========================================================================
+       MANDATORY FOOTER
+       ========================================================================= -->
+  <footer class="tf-footer">
+    <div class="container-xl">
+      <div class="row g-4">
+        <!-- Column 1: Brand & Social -->
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center mb-2">
+            <a class="navbar-brand navbar-brand-logo d-inline-flex align-items-center gap-2 text-nowrap" href="index.html">
+              <svg class="brand-logo-icon" width="26" height="26" viewBox="0 0 48 48" fill="none">
+                <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
+                <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
+                <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+              </svg>
+              <span>TONE <span class="divider">/</span> FORM</span>
+            </a>
+          </div>
+          <p class="footer-brand-tagline">
+            "Your Shade. Your Match. Your Finish."
+          </p>
+
+          <!-- Social Icons in Footer -->
+          <div class="footer-social-links">
+            <a href="#" class="btn-social-icon" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="TikTok" title="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="YouTube" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="Pinterest" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+          </div>
+
+          <p class="small text-muted-tf mt-3">
+            Fictional demo brand exploring the convergence of luxury cosmetics, undertone technology, and personalized complexion design.
+          </p>
+        </div>
+
+        <!-- Column 2: Shop -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer-heading">Shop</h6>
+          <ul class="footer-link-list">
+            <li><a href="shop.html?category=foundation">Foundation</a></li>
+            <li><a href="shop.html?category=concealer">Concealer</a></li>
+            <li><a href="shop.html?category=sets">Sets</a></li>
+            <li><a href="shade-match.html">Shade Match</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Discover -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer-heading">Discover</h6>
+          <ul class="footer-link-list">
+            <li><a href="undertone-analyzer.html">Undertone Analyzer</a></li>
+            <li><a href="kit-builder.html">Kit Builder</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Account & Internal -->
+        <div class="col-lg-4 col-md-6">
+          <h6 class="footer-heading">Account & Operations</h6>
+          <ul class="footer-link-list">
+            <li><a href="login.html">Customer Login</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+            <li><a href="dashboard.html"><i class="bi bi-shield-lock me-1 text-accent"></i> Inventory Dashboard</a></li>
+            <li><a href="documentation/index.html"><i class="bi bi-file-earmark-code me-1"></i> Template Documentation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+        <div>
+          &copy; 2026 TONE / FORM. All rights reserved. Demo beauty-tech commercial template.
+        </div>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="#" class="text-muted-tf">Privacy</a>
+          <a href="#" class="text-muted-tf">Terms</a>
+          <a href="#" class="text-muted-tf">Shipping</a>
+          <a href="#" class="text-muted-tf">Returns</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

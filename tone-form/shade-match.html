@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shade Matcher — TONE / FORM | Personalized Complexion Discovery</title>
+  <meta name="description" content="Find your exact foundation and concealer match with the TONE / FORM intelligent shade matcher. Step-by-step depth, undertone, finish, and coverage calibration.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- =========================================================================
+       MANDATORY STICKY NAVBAR
+       ========================================================================= -->
+  <nav class="navbar navbar-expand-xl tf-navbar" id="main-nav">
+    <div class="container-xl">
+      <!-- Brand Logo -->
+      <a class="navbar-brand navbar-brand-logo" href="index.html">
+        <svg class="brand-logo-icon" width="26" height="26" viewBox="0 0 48 48" fill="none">
+          <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
+          <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
+          <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+        </svg>
+        <span>TONE <span class="divider">/</span> FORM</span>
+      </a>
+
+      <!-- Mobile Controls (Theme Toggle + Hamburger) -->
+      <div class="d-flex align-items-center gap-2 d-xl-none">
+        <button class="btn-theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#tfNavbarNav" aria-controls="tfNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2 text-primary"></i>
+        </button>
+      </div>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="tfNavbarNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="index.html">Home</a>
+          </li>
+          
+          <!-- Shop Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link tf-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="shopDropdown">
+              Shop
+            </a>
+            <ul class="dropdown-menu tf-dropdown-menu" aria-labelledby="shopDropdown">
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=foundation">Foundation <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=concealer">Concealer <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=sets">Foundation + Concealer Sets <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><hr class="dropdown-divider my-1"></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?filter=new">New Arrivals <span class="badge bg-secondary-subtle text-secondary font-tech">2026</span></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?filter=bestsellers">Best Sellers <i class="bi bi-stars text-accent"></i></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="undertone-analyzer.html">Undertone Analyzer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="kit-builder.html">Kit Builder</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="dashboard.html">Dashboard</a>
+          </li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <!-- Desktop Theme Toggle -->
+          <button class="btn-theme-toggle d-none d-xl-inline-flex" type="button" aria-label="Toggle light or dark theme" title="Toggle theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+          
+          <a href="signup.html" class="btn-tf-outline btn-tf-sm">Sign Up</a>
+          <a href="shade-match.html" class="btn-tf-accent btn-tf-sm">Find My Shade</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="section-padding-sm bg-surface border-bottom border-tf text-center">
+    <div class="container-xl">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <span class="editorial-tag">Interactive Complexion Calibration</span>
+          <h1 class="editorial-title mb-2">Find Your Foundation Match.</h1>
+          <p class="editorial-subtitle mx-auto mb-0">
+            A step-by-step diagnostic journey balancing your surface depth, sub-surface undertone, and desired texture finish.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Multi-Step Matcher Application -->
+  <main class="section-padding" id="shade-match-wizard">
+    <div class="container-xl" style="max-width: 880px;">
+      
+      <!-- Wizard Progress Bar -->
+      <div class="wizard-progress-bar">
+        <div class="wizard-progress-fill" id="wizard-progress-fill" style="width: 0%;"></div>
+      </div>
+
+      <!-- STEP 1: SKIN DEPTH -->
+      <div class="wizard-step-card active" data-step="1" data-step-type="depth">
+        <div class="text-center mb-4">
+          <span class="editorial-tag">Step 01 / 05</span>
+          <h2 class="display-font">Choose Your Skin Depth</h2>
+          <p class="text-muted-tf small">Select the category closest to your natural baseline depth.</p>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-sm-6 col-md-4">
+            <div class="option-select-card" data-value="Very Fair">
+              <div class="depth-preview-bar" style="background-color: #F8E6D8;"></div>
+              <div class="d-flex align-items-center">
+                <span class="fw-bold font-tech text-primary">Very Fair</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <span class="text-muted-tf small mt-1">Porcelain / Alabaster tones</span>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <div class="option-select-card" data-value="Fair">
+              <div class="depth-preview-bar" style="background-color: #EECDBC;"></div>
+              <div class="d-flex align-items-center">
+                <span class="fw-bold font-tech text-primary">Fair</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <span class="text-muted-tf small mt-1">Bisque / Linen tones</span>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <div class="option-select-card" data-value="Light">
+              <div class="depth-preview-bar" style="background-color: #DEB393;"></div>
+              <div class="d-flex align-items-center">
+                <span class="fw-bold font-tech text-primary">Light</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <span class="text-muted-tf small mt-1">Sand / Warm Beige tones</span>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <div class="option-select-card selected" data-value="Medium">
+              <div class="depth-preview-bar" style="background-color: #C69472;"></div>
+              <div class="d-flex align-items-center">
+                <span class="fw-bold font-tech text-primary">Medium</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <span class="text-muted-tf small mt-1">Honey / Amber tones</span>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <div class="option-select-card" data-value="Tan">
+              <div class="depth-preview-bar" style="background-color: #A7704C;"></div>
+              <div class="d-flex align-items-center">
+                <span class="fw-bold font-tech text-primary">Tan</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <span class="text-muted-tf small mt-1">Golden Bronze / Toffee tones</span>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <div class="option-select-card" data-value="Deep">
+              <div class="depth-preview-bar" style="background-color: #7D4C30;"></div>
+              <div class="d-flex align-items-center">
+                <span class="fw-bold font-tech text-primary">Deep</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <span class="text-muted-tf small mt-1">Mocha / Cacao tones</span>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4 mx-auto">
+            <div class="option-select-card" data-value="Rich Deep">
+              <div class="depth-preview-bar" style="background-color: #543220;"></div>
+              <div class="d-flex align-items-center">
+                <span class="fw-bold font-tech text-primary">Rich Deep</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <span class="text-muted-tf small mt-1">Ebony / Mahogany tones</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: UNDERTONE -->
+      <div class="wizard-step-card" data-step="2" data-step-type="undertone">
+        <div class="text-center mb-4">
+          <span class="editorial-tag">Step 02 / 05</span>
+          <h2 class="display-font">Choose Your Undertone</h2>
+          <p class="text-muted-tf small">Your undertone is the subtle hue beneath your surface skin.</p>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="option-select-card" data-value="Cool">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="badge font-tech" style="background: rgba(200,125,111,0.2); color: var(--tf-accent);">COOL (C)</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <h5 class="mb-1">Pink / Rosy / Blue</h5>
+              <p class="text-muted-tf small mb-0">You sunburn fairly easily; silver jewelry flatters your complexion best.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="option-select-card selected" data-value="Neutral">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="badge font-tech" style="background: rgba(125,117,105,0.2); color: var(--tf-secondary);">NEUTRAL (N)</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <h5 class="mb-1">Balanced Equilibrium</h5>
+              <p class="text-muted-tf small mb-0">Harmonious mix of golden and rosy hues; both gold and silver look radiant.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="option-select-card" data-value="Warm">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="badge font-tech" style="background: rgba(184,130,42,0.2); color: #B8822A;">WARM (W)</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <h5 class="mb-1">Golden / Yellow / Honey</h5>
+              <p class="text-muted-tf small mb-0">You tan easily with minimal burn; gold jewelry glows against your skin.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="option-select-card" data-value="Olive">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="badge font-tech" style="background: rgba(61,123,88,0.2); color: var(--tf-success);">OLIVE (O)</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <h5 class="mb-1">Subtle Green / Earthy</h5>
+              <p class="text-muted-tf small mb-0">Neutral to cool green undertones; warm makeup often looks too orange.</p>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="option-select-card text-center py-3" data-value="Neutral">
+              <div class="d-flex align-items-center justify-content-center gap-2">
+                <i class="bi bi-question-circle text-accent"></i>
+                <span class="font-tech fw-bold text-primary">Not Sure About Your Undertone?</span>
+              </div>
+              <span class="text-muted-tf small">We will recommend our adaptive balanced Neutral spectrum for you, or take the <a href="undertone-analyzer.html" class="text-accent text-decoration-underline">Undertone Analyzer</a>.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: FINISH -->
+      <div class="wizard-step-card" data-step="3" data-step-type="finish">
+        <div class="text-center mb-4">
+          <span class="editorial-tag">Step 03 / 05</span>
+          <h2 class="display-font">Choose Desired Finish</h2>
+          <p class="text-muted-tf small">How do you prefer light to interact with your complexion?</p>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="option-select-card selected" data-value="Natural Luminous">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <i class="bi bi-sun fs-4 text-accent"></i>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <h5 class="mb-1">Natural Luminous</h5>
+              <p class="text-muted-tf small mb-0">Mimics hydrated, healthy skin texture with a soft ambient sheen.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="option-select-card" data-value="Velvet Demi-Matte">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <i class="bi bi-circle-half fs-4 text-secondary"></i>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <h5 class="mb-1">Velvet Demi-Matte</h5>
+              <p class="text-muted-tf small mb-0">Soft-focus blurring with shine control, without powdery flatness.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="option-select-card" data-value="Dewy Radiant">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <i class="bi bi-stars fs-4 text-warning"></i>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <h5 class="mb-1">Dewy Radiant</h5>
+              <p class="text-muted-tf small mb-0">Glass-skin high reflection for maximum moisture glow and bounce.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4: COVERAGE -->
+      <div class="wizard-step-card" data-step="4" data-step-type="coverage">
+        <div class="text-center mb-4">
+          <span class="editorial-tag">Step 04 / 05</span>
+          <h2 class="display-font">Choose Coverage Level</h2>
+          <p class="text-muted-tf small">From everyday sheer veil to camera-ready perfection.</p>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="option-select-card" data-value="Light Sheer">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="font-tech text-muted-tf fw-bold">SHEER</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <h5 class="mb-1">Light Sheer</h5>
+              <p class="text-muted-tf small mb-0">Lets freckles and natural texture peek through while soothing redness.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="option-select-card selected" data-value="Medium Buildable">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="font-tech text-accent fw-bold">BALANCED</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <h5 class="mb-1">Medium Buildable</h5>
+              <p class="text-muted-tf small mb-0">Our most popular level: easily layered where needed without feeling heavy.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="option-select-card" data-value="Full Flawless">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="font-tech text-primary fw-bold">COMPLETE</span>
+                <span class="option-check-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <h5 class="mb-1">Full Flawless</h5>
+              <p class="text-muted-tf small mb-0">Complete pigmentation concealment for blemishes, redness, and dark circles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5: OPTIONAL CURRENT FOUNDATION -->
+      <div class="wizard-step-card" data-step="5" data-step-type="current">
+        <div class="text-center mb-4">
+          <span class="editorial-tag">Step 05 / 05</span>
+          <h2 class="display-font">Optional: Current Reference Shade</h2>
+          <p class="text-muted-tf small">If you currently wear a shade you like, tell us your reference.</p>
+        </div>
+
+        <div class="card p-4 border-tf bg-surface rounded-4">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="current-brand-input" class="form-label-tf">Brand / Formulation</label>
+              <input type="text" class="form-control-tf" id="current-brand-input" placeholder="e.g. Fenty, Armani, NARS, MAC (Optional)">
+            </div>
+            <div class="col-md-6">
+              <label for="current-shade-input" class="form-label-tf">Shade Number / Name</label>
+              <input type="text" class="form-control-tf" id="current-shade-input" placeholder="e.g. 310, NC35, Fiji, 5.5 (Optional)">
+            </div>
+          </div>
+          <div class="small text-muted-tf mt-3">
+            <i class="bi bi-info-circle me-1"></i> Skipping this step will rely strictly on your calibrated optical inputs above.
+          </div>
+        </div>
+      </div>
+
+      <!-- WIZARD RESULT CARD (Calculated dynamically) -->
+      <div class="card p-4 p-md-5 border-tf bg-surface rounded-4 shadow-lg d-none mt-4 text-center" id="wizard-result-card">
+        <span class="editorial-tag">PERSONALIZED MATCH RESULTS</span>
+        <h2 class="display-font mb-2">YOUR CALIBRATED MATCH</h2>
+        <p class="text-muted-tf small mb-4">Calculated based on your surface depth, undertone harmony, and finish selections.</p>
+        
+        <div class="d-inline-flex align-items-center gap-2 mb-4 px-3 py-1 bg-card rounded-pill border border-tf">
+          <span class="match-confidence-badge" id="res-confidence">97% Match Confidence</span>
+          <span class="font-tech small text-muted-tf">Demo Calculation</span>
+        </div>
+
+        <div class="row g-4 align-items-center justify-content-center text-start my-2">
+          <!-- Foundation Match -->
+          <div class="col-md-6">
+            <div class="p-4 bg-card rounded-4 border border-tf h-100">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge bg-surface text-accent font-tech">FOUNDATION</span>
+                <span class="swatch-chip" id="res-swatch-circle" style="background-color: #C69472; width: 24px; height: 24px;"></span>
+              </div>
+              <h4 class="mb-1 font-tech" id="res-foundation-shade">M420 Warm Neutral 320</h4>
+              <p class="small text-muted-tf mb-2">Tone Balance Fluid Foundation</p>
+              <div class="small font-tech text-accent mb-3" id="res-finish">Natural Luminous • Medium Buildable</div>
+              <a href="product-details.html?id=foundation-1" class="btn-tf-outline btn-tf-sm w-100">View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Concealer Match -->
+          <div class="col-md-6">
+            <div class="p-4 bg-card rounded-4 border border-tf h-100">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge bg-surface text-secondary font-tech">SISTER CONCEALER</span>
+                <span class="swatch-chip" style="background-color: #DEB393; width: 24px; height: 24px;"></span>
+              </div>
+              <h4 class="mb-1 font-tech" id="res-concealer-shade">C28 Soft Sand</h4>
+              <p class="small text-muted-tf mb-2">Radiant Precision Concealer</p>
+              <div class="small font-tech text-accent mb-3" id="res-undertone">Neutral Undertone</div>
+              <a href="product-details.html?id=concealer-1" class="btn-tf-outline btn-tf-sm w-100">View Product Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4 pt-3 border-top border-tf">
+          <a href="kit-builder.html" class="btn-tf-primary">
+            <i class="bi bi-sliders me-1"></i> Add Match to Kit Builder
+          </a>
+          <button class="btn-tf-outline" id="btn-restart-match">
+            <i class="bi bi-arrow-counterclockwise me-1"></i> Try Another Match
+          </button>
+        </div>
+
+        <div class="mt-4 p-3 bg-card border border-tf rounded-3 text-center">
+          <p class="small text-muted-tf mb-0">
+            <i class="bi bi-shield-exclamation text-accent me-1"></i> <strong>Disclaimer:</strong> This shade finder is an illustrative beauty recommendation tool for cosmetic color matching, not a scientifically validated medical skin diagnostic system.
+          </p>
+        </div>
+      </div>
+
+      <!-- Navigation Toolbar -->
+      <div class="d-flex justify-content-between align-items-center mt-5 pt-3 border-top border-tf" id="wizard-nav-toolbar">
+        <button class="btn-tf-outline btn-tf-sm" id="btn-wizard-prev" disabled>
+          <i class="bi bi-chevron-left me-1"></i> Back
+        </button>
+        <button class="btn-tf-primary" id="btn-wizard-next">
+          Continue <i class="bi bi-chevron-right ms-1"></i>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+    <!-- =========================================================================
+       MANDATORY FOOTER
+       ========================================================================= -->
+  <footer class="tf-footer">
+    <div class="container-xl">
+      <div class="row g-4">
+        <!-- Column 1: Brand & Social -->
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center mb-2">
+            <a class="navbar-brand navbar-brand-logo d-inline-flex align-items-center gap-2 text-nowrap" href="index.html">
+              <svg class="brand-logo-icon" width="26" height="26" viewBox="0 0 48 48" fill="none">
+                <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
+                <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
+                <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+              </svg>
+              <span>TONE <span class="divider">/</span> FORM</span>
+            </a>
+          </div>
+          <p class="footer-brand-tagline">
+            "Your Shade. Your Match. Your Finish."
+          </p>
+
+          <!-- Social Icons in Footer -->
+          <div class="footer-social-links">
+            <a href="#" class="btn-social-icon" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="TikTok" title="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="YouTube" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="Pinterest" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+          </div>
+
+          <p class="small text-muted-tf mt-3">
+            Fictional demo brand exploring the convergence of luxury cosmetics, undertone technology, and personalized complexion design.
+          </p>
+        </div>
+
+        <!-- Column 2: Shop -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer-heading">Shop</h6>
+          <ul class="footer-link-list">
+            <li><a href="shop.html?category=foundation">Foundation</a></li>
+            <li><a href="shop.html?category=concealer">Concealer</a></li>
+            <li><a href="shop.html?category=sets">Sets</a></li>
+            <li><a href="shade-match.html">Shade Match</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Discover -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer-heading">Discover</h6>
+          <ul class="footer-link-list">
+            <li><a href="undertone-analyzer.html">Undertone Analyzer</a></li>
+            <li><a href="kit-builder.html">Kit Builder</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Account & Internal -->
+        <div class="col-lg-4 col-md-6">
+          <h6 class="footer-heading">Account & Operations</h6>
+          <ul class="footer-link-list">
+            <li><a href="login.html">Customer Login</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+            <li><a href="dashboard.html"><i class="bi bi-shield-lock me-1 text-accent"></i> Inventory Dashboard</a></li>
+            <li><a href="documentation/index.html"><i class="bi bi-file-earmark-code me-1"></i> Template Documentation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+        <div>
+          &copy; 2026 TONE / FORM. All rights reserved. Demo beauty-tech commercial template.
+        </div>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="#" class="text-muted-tf">Privacy</a>
+          <a href="#" class="text-muted-tf">Terms</a>
+          <a href="#" class="text-muted-tf">Shipping</a>
+          <a href="#" class="text-muted-tf">Returns</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

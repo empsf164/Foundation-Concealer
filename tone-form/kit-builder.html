@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kit Builder — TONE / FORM | Custom Base Regimen</title>
+  <meta name="description" content="Build your personalized foundation, concealer, and setting powder kit. Bundle your calibrated complexion essentials with integrated 15% discount.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- =========================================================================
+       MANDATORY STICKY NAVBAR
+       ========================================================================= -->
+  <nav class="navbar navbar-expand-xl tf-navbar" id="main-nav">
+    <div class="container-xl">
+      <!-- Brand Logo -->
+      <a class="navbar-brand navbar-brand-logo" href="index.html">
+        <svg class="brand-logo-icon" width="26" height="26" viewBox="0 0 48 48" fill="none">
+          <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
+          <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
+          <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+        </svg>
+        <span>TONE <span class="divider">/</span> FORM</span>
+      </a>
+
+      <!-- Mobile Controls (Theme Toggle + Hamburger) -->
+      <div class="d-flex align-items-center gap-2 d-xl-none">
+        <button class="btn-theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#tfNavbarNav" aria-controls="tfNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2 text-primary"></i>
+        </button>
+      </div>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="tfNavbarNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="index.html">Home</a>
+          </li>
+          
+          <!-- Shop Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link tf-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="shopDropdown">
+              Shop
+            </a>
+            <ul class="dropdown-menu tf-dropdown-menu" aria-labelledby="shopDropdown">
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=foundation">Foundation <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=concealer">Concealer <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=sets">Foundation + Concealer Sets <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><hr class="dropdown-divider my-1"></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?filter=new">New Arrivals <span class="badge bg-secondary-subtle text-secondary font-tech">2026</span></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?filter=bestsellers">Best Sellers <i class="bi bi-stars text-accent"></i></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="undertone-analyzer.html">Undertone Analyzer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link active" href="kit-builder.html">Kit Builder</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="dashboard.html">Dashboard</a>
+          </li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <!-- Desktop Theme Toggle -->
+          <button class="btn-theme-toggle d-none d-xl-inline-flex" type="button" aria-label="Toggle light or dark theme" title="Toggle theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+          
+          <a href="signup.html" class="btn-tf-outline btn-tf-sm">Sign Up</a>
+          <a href="shade-match.html" class="btn-tf-accent btn-tf-sm">Find My Shade</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="section-padding-sm bg-surface border-bottom border-tf text-center">
+    <div class="container-xl">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <span class="editorial-tag">Custom Regimen Architect</span>
+          <h1 class="editorial-title mb-2">Build Your Base.</h1>
+          <p class="editorial-subtitle mx-auto mb-0">
+            Combine your bespoke foundation shade, sister concealer match, and setting tools for seamless complexion unity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Kit Builder Application -->
+  <main class="section-padding" id="kit-builder-app">
+    <div class="container-xl">
+      <div class="row g-5 align-items-start">
+        
+        <!-- Left: Steps Container -->
+        <div class="col-lg-8">
+          
+          <!-- Step Indicator -->
+          <div class="kit-step-indicator mb-5">
+            <div class="kit-step-item active" data-step-index="1">
+              <div class="kit-step-num">01</div>
+              <div class="small font-tech fw-bold">Foundation</div>
+            </div>
+            <div class="kit-step-item" data-step-index="2">
+              <div class="kit-step-num">02</div>
+              <div class="small font-tech fw-bold">Concealer</div>
+            </div>
+            <div class="kit-step-item" data-step-index="3">
+              <div class="kit-step-num">03</div>
+              <div class="small font-tech fw-bold">Add-On</div>
+            </div>
+            <div class="kit-step-item" data-step-index="4">
+              <div class="kit-step-num">04</div>
+              <div class="small font-tech fw-bold">Review</div>
+            </div>
+          </div>
+
+          <!-- STEP 1: FOUNDATION SELECTION -->
+          <div class="kit-step-section" data-step="1">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <div>
+                <span class="editorial-tag">Step 01 of 04</span>
+                <h3 class="display-font mb-0">Select Your Foundation Shade & Finish</h3>
+              </div>
+              <a href="shade-match.html" class="small text-accent font-tech text-decoration-underline">
+                <i class="bi bi-magic me-1"></i> Need guidance?
+              </a>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="option-select-card kit-f-card" data-shade="F120 Neutral Ivory" data-finish="Natural Luminous">
+                  <div class="depth-preview-bar" style="background-color: #F6E4D6;"></div>
+                  <h5 class="mb-1 font-tech">F120 Neutral Ivory</h5>
+                  <div class="small text-muted-tf mb-2">Tier 1: Very Fair • Neutral</div>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">Natural Luminous • $48</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="option-select-card kit-f-card" data-shade="F220 Neutral Bisque" data-finish="Natural Luminous">
+                  <div class="depth-preview-bar" style="background-color: #ECCBB2;"></div>
+                  <h5 class="mb-1 font-tech">F220 Neutral Bisque</h5>
+                  <div class="small text-muted-tf mb-2">Tier 2: Fair • Neutral</div>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">Natural Luminous • $48</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="option-select-card kit-f-card" data-shade="L320 Warm Sand" data-finish="Natural Luminous">
+                  <div class="depth-preview-bar" style="background-color: #DEB393;"></div>
+                  <h5 class="mb-1 font-tech">L320 Warm Sand</h5>
+                  <div class="small text-muted-tf mb-2">Tier 3: Light • Warm Golden</div>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">Natural Luminous • $48</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="option-select-card kit-f-card selected" data-shade="M420 Warm Neutral 320" data-finish="Natural Luminous">
+                  <div class="depth-preview-bar" style="background-color: #C69472;"></div>
+                  <h5 class="mb-1 font-tech">M420 Warm Neutral 320</h5>
+                  <div class="small text-muted-tf mb-2">Tier 4: Medium • Neutral Amber</div>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">Natural Luminous • $48</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="option-select-card kit-f-card" data-shade="T520 Neutral Toffee" data-finish="Natural Luminous">
+                  <div class="depth-preview-bar" style="background-color: #A7704C;"></div>
+                  <h5 class="mb-1 font-tech">T520 Neutral Toffee</h5>
+                  <div class="small text-muted-tf mb-2">Tier 5: Tan • Neutral Bronze</div>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">Natural Luminous • $48</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="option-select-card kit-f-card" data-shade="D620 Neutral Cacao" data-finish="Natural Luminous">
+                  <div class="depth-preview-bar" style="background-color: #7D4C30;"></div>
+                  <h5 class="mb-1 font-tech">D620 Neutral Cacao</h5>
+                  <div class="small text-muted-tf mb-2">Tier 6: Deep • Rich Neutral</div>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">Natural Luminous • $48</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end mt-4">
+              <button class="btn-tf-primary btn-kit-step-nav" data-target-step="2">
+                Continue to Concealer <i class="bi bi-chevron-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: CONCEALER SELECTION -->
+          <div class="kit-step-section d-none" data-step="2">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <div>
+                <span class="editorial-tag">Step 02 of 04</span>
+                <h3 class="display-font mb-0">Select Matched Precision Concealer</h3>
+              </div>
+              <span class="small font-tech text-muted-tf">Calibrated to brighten without ashy contrast</span>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="option-select-card kit-c-card" data-shade="C10 Cool Porcelain">
+                  <div class="depth-preview-bar" style="background-color: #F8E8DD;"></div>
+                  <h5 class="mb-1 font-tech">C10 Cool Porcelain</h5>
+                  <div class="small text-muted-tf mb-2">Pairs with F100–F130</div>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">Full Coverage • $32</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="option-select-card kit-c-card" data-shade="C18 Light Shell">
+                  <div class="depth-preview-bar" style="background-color: #EFD4C0;"></div>
+                  <h5 class="mb-1 font-tech">C18 Light Shell</h5>
+                  <div class="small text-muted-tf mb-2">Pairs with F200–F230</div>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">Full Coverage • $32</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="option-select-card kit-c-card selected" data-shade="C28 Soft Sand">
+                  <div class="depth-preview-bar" style="background-color: #E2BFA6;"></div>
+                  <h5 class="mb-1 font-tech">C28 Soft Sand</h5>
+                  <div class="small text-muted-tf mb-2">Pairs with L300–M420</div>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">Full Coverage • $32</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="option-select-card kit-c-card" data-shade="C36 Honey Sand">
+                  <div class="depth-preview-bar" style="background-color: #CDA081;"></div>
+                  <h5 class="mb-1 font-tech">C36 Honey Sand</h5>
+                  <div class="small text-muted-tf mb-2">Pairs with M430–M440</div>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">Full Coverage • $32</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="option-select-card kit-c-card" data-shade="C48 Warm Almond">
+                  <div class="depth-preview-bar" style="background-color: #AF7D59;"></div>
+                  <h5 class="mb-1 font-tech">C48 Warm Almond</h5>
+                  <div class="small text-muted-tf mb-2">Pairs with T500–T540</div>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">Full Coverage • $32</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="option-select-card kit-c-card" data-shade="C62 Rich Mocha">
+                  <div class="depth-preview-bar" style="background-color: #845337;"></div>
+                  <h5 class="mb-1 font-tech">C62 Rich Mocha</h5>
+                  <div class="small text-muted-tf mb-2">Pairs with D600–R740</div>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">Full Coverage • $32</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-tf-outline btn-kit-step-nav" data-target-step="1">
+                <i class="bi bi-chevron-left me-1"></i> Back
+              </button>
+              <button class="btn-tf-primary btn-kit-step-nav" data-target-step="3">
+                Continue to Add-On <i class="bi bi-chevron-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: OPTIONAL ADD-ON -->
+          <div class="kit-step-section d-none" data-step="3">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <div>
+                <span class="editorial-tag">Step 03 of 04</span>
+                <h3 class="display-font mb-0">Optional Setting & Tool Add-On</h3>
+              </div>
+              <span class="small font-tech text-muted-tf">Select 1 or skip</span>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div class="option-select-card kit-addon-card selected" data-addon-name="Velvet Translucent Powder" data-price="28">
+                  <div class="p-3 bg-surface rounded-3 text-center mb-2">
+                    <i class="bi bi-bullseye fs-2 text-accent"></i>
+                  </div>
+                  <h5 class="mb-1">Translucent Powder</h5>
+                  <p class="small text-muted-tf mb-2">Ultra-milled setting powder that diffuses texture.</p>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">+$28</span>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="option-select-card kit-addon-card" data-addon-name="Angled Foundation Buffing Brush" data-price="30">
+                  <div class="p-3 bg-surface rounded-3 text-center mb-2">
+                    <i class="bi bi-brush fs-2 text-accent"></i>
+                  </div>
+                  <h5 class="mb-1">Buffing Brush</h5>
+                  <p class="small text-muted-tf mb-2">Dense cruelty-free bristles for airbrushed buffing.</p>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">+$30</span>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="option-select-card kit-addon-card" data-addon-name="Precision Teardrop Blending Sponge" data-price="18">
+                  <div class="p-3 bg-surface rounded-3 text-center mb-2">
+                    <i class="bi bi-egg fs-2 text-accent"></i>
+                  </div>
+                  <h5 class="mb-1">Blending Sponge</h5>
+                  <p class="small text-muted-tf mb-2">Latex-free ergonomic sponge for dewy skin pressing.</p>
+                  <span class="badge bg-surface text-primary font-tech align-self-start">+$18</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3 text-end">
+              <button class="btn-tf-outline btn-tf-sm" id="btn-remove-addon">
+                <i class="bi bi-x-circle me-1"></i> Remove Add-On (No Tool)
+              </button>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-tf-outline btn-kit-step-nav" data-target-step="2">
+                <i class="bi bi-chevron-left me-1"></i> Back
+              </button>
+              <button class="btn-tf-primary btn-kit-step-nav" data-target-step="4">
+                Review Kit <i class="bi bi-chevron-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: REVIEW KIT -->
+          <div class="kit-step-section d-none" data-step="4">
+            <div class="text-center mb-4">
+              <span class="editorial-tag">Step 04 of 04</span>
+              <h2 class="display-font">Review Your Curated Base Regimen</h2>
+              <p class="text-muted-tf small">Everything you need for an undetectable skin finish, coordinated into one kit.</p>
+            </div>
+
+            <div class="card p-4 border-tf bg-surface rounded-4 mb-4">
+              <div class="row align-items-center g-4">
+                <div class="col-md-4">
+                  <img src="assets/images/foundation/kit-flatlay.jpg" alt="Kit visual" class="rounded-3 img-fluid border border-tf">
+                </div>
+                <div class="col-md-8">
+                  <h4 class="mb-2">TONE / FORM Master Base Kit</h4>
+                  <p class="small text-muted-tf mb-3">Custom assembled for your skin depth and finish preference. Includes automated formula compatibility guide.</p>
+                  
+                  <div class="p-3 bg-card rounded-3 border border-tf small">
+                    <div class="d-flex justify-content-between py-1">
+                      <span class="fw-bold">Step 1 Foundation:</span>
+                      <span class="font-tech text-accent">Selected in Step 01</span>
+                    </div>
+                    <div class="d-flex justify-content-between py-1">
+                      <span class="fw-bold">Step 2 Concealer:</span>
+                      <span class="font-tech text-accent">Selected in Step 02</span>
+                    </div>
+                    <div class="d-flex justify-content-between py-1">
+                      <span class="fw-bold">Step 3 Tool/Setting:</span>
+                      <span class="font-tech text-accent">Included</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn-tf-outline btn-kit-step-nav" data-target-step="3">
+                <i class="bi bi-chevron-left me-1"></i> Edit Add-On
+              </button>
+              <button class="btn-tf-accent py-3 px-4 fs-6" id="btn-save-kit-demo">
+                <i class="bi bi-check2-circle me-1"></i> Build My Kit — Save Demo
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Sticky Live Kit Summary -->
+        <div class="col-lg-4">
+          <div class="kit-summary-card">
+            <span class="editorial-tag mb-1">REAL-TIME SELECTION</span>
+            <h3 class="display-font mb-3">YOUR KIT</h3>
+
+            <!-- Foundation Selection Item -->
+            <div class="mb-3 pb-3 border-bottom border-tf">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="small font-tech text-muted-tf d-block">FOUNDATION</span>
+                  <div class="fw-bold text-primary" id="kit-sum-foundation-name">Tone Balance Fluid Foundation</div>
+                  <div class="small text-accent font-tech" id="kit-sum-foundation-shade">M420 Warm Neutral 320 • Natural Luminous</div>
+                </div>
+                <span class="font-tech fw-bold text-primary" id="kit-sum-foundation-price">$48</span>
+              </div>
+            </div>
+
+            <!-- Concealer Selection Item -->
+            <div class="mb-3 pb-3 border-bottom border-tf">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="small font-tech text-muted-tf d-block">CONCEALER</span>
+                  <div class="fw-bold text-primary" id="kit-sum-concealer-name">Radiant Precision Concealer</div>
+                  <div class="small text-accent font-tech" id="kit-sum-concealer-shade">C28 Soft Sand • Full Coverage</div>
+                </div>
+                <span class="font-tech fw-bold text-primary" id="kit-sum-concealer-price">$32</span>
+              </div>
+            </div>
+
+            <!-- Addon Selection Item -->
+            <div class="mb-3 pb-3 border-bottom border-tf" id="kit-sum-addon-wrap">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="small font-tech text-muted-tf d-block">SETTING ESSENTIAL</span>
+                  <div class="fw-bold text-primary" id="kit-sum-addon-name">Velvet Translucent Powder</div>
+                </div>
+                <span class="font-tech fw-bold text-primary" id="kit-sum-addon-price">$28</span>
+              </div>
+            </div>
+
+            <!-- Pricing Breakdown -->
+            <div class="small mb-3">
+              <div class="d-flex justify-content-between py-1 text-muted-tf">
+                <span>Subtotal</span>
+                <span class="font-tech" id="kit-sum-subtotal">$108</span>
+              </div>
+              <div class="d-flex justify-content-between py-1 text-accent fw-bold">
+                <span>Bundle Savings (15%)</span>
+                <span class="font-tech" id="kit-sum-discount">-$16</span>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top border-tf mb-4">
+              <div>
+                <span class="fw-bold text-primary d-block">Estimated Total:</span>
+                <span class="small text-muted-tf">Demo Front-End Template</span>
+              </div>
+              <span class="font-tech fs-4 fw-bold text-accent" id="kit-sum-total">$92 (Demo)</span>
+            </div>
+
+            <button class="btn-tf-primary w-100 py-3" id="btn-save-kit-demo-sidebar" onclick="document.getElementById('btn-save-kit-demo')?.click() || alert('Kit Saved — Demo!')">
+              <i class="bi bi-box-seam me-1"></i> Save Kit Configuration
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Notification for Kit Save Demo -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1090;">
+    <div id="kit-save-toast" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          <i class="bi bi-check-circle-fill text-success me-2"></i> Kit Saved — Demo! Your custom base shade pairing has been captured.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+    <!-- =========================================================================
+       MANDATORY FOOTER
+       ========================================================================= -->
+  <footer class="tf-footer">
+    <div class="container-xl">
+      <div class="row g-4">
+        <!-- Column 1: Brand & Social -->
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center mb-2">
+            <a class="navbar-brand navbar-brand-logo d-inline-flex align-items-center gap-2 text-nowrap" href="index.html">
+              <svg class="brand-logo-icon" width="26" height="26" viewBox="0 0 48 48" fill="none">
+                <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
+                <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
+                <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+              </svg>
+              <span>TONE <span class="divider">/</span> FORM</span>
+            </a>
+          </div>
+          <p class="footer-brand-tagline">
+            "Your Shade. Your Match. Your Finish."
+          </p>
+
+          <!-- Social Icons in Footer -->
+          <div class="footer-social-links">
+            <a href="#" class="btn-social-icon" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="TikTok" title="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="YouTube" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="Pinterest" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+          </div>
+
+          <p class="small text-muted-tf mt-3">
+            Fictional demo brand exploring the convergence of luxury cosmetics, undertone technology, and personalized complexion design.
+          </p>
+        </div>
+
+        <!-- Column 2: Shop -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer-heading">Shop</h6>
+          <ul class="footer-link-list">
+            <li><a href="shop.html?category=foundation">Foundation</a></li>
+            <li><a href="shop.html?category=concealer">Concealer</a></li>
+            <li><a href="shop.html?category=sets">Sets</a></li>
+            <li><a href="shade-match.html">Shade Match</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Discover -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer-heading">Discover</h6>
+          <ul class="footer-link-list">
+            <li><a href="undertone-analyzer.html">Undertone Analyzer</a></li>
+            <li><a href="kit-builder.html">Kit Builder</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Account & Internal -->
+        <div class="col-lg-4 col-md-6">
+          <h6 class="footer-heading">Account & Operations</h6>
+          <ul class="footer-link-list">
+            <li><a href="login.html">Customer Login</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+            <li><a href="dashboard.html"><i class="bi bi-shield-lock me-1 text-accent"></i> Inventory Dashboard</a></li>
+            <li><a href="documentation/index.html"><i class="bi bi-file-earmark-code me-1"></i> Template Documentation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+        <div>
+          &copy; 2026 TONE / FORM. All rights reserved. Demo beauty-tech commercial template.
+        </div>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="#" class="text-muted-tf">Privacy</a>
+          <a href="#" class="text-muted-tf">Terms</a>
+          <a href="#" class="text-muted-tf">Shipping</a>
+          <a href="#" class="text-muted-tf">Returns</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

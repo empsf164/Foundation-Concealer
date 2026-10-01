@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Low Stock Alerts & Restock — TONE / FORM Operations</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div class="p-3 border-bottom border-tf d-flex align-items-center justify-content-between">
+                <a class="navbar-brand-logo fs-6 text-primary" href="../index.html">
+          <svg class="brand-logo-icon" width="22" height="22" viewBox="0 0 48 48" fill="none">
+            <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
+            <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
+            <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+          </svg>
+          <span>TONE <span class="divider">/</span> FORM</span>
+        </a>
+        <span class="badge bg-surface font-tech text-accent" style="font-size: 0.65rem;">OPS DESK</span>
+      </div>
+
+      <nav class="py-3 flex-grow-1 overflow-y-auto">
+        <div class="px-3 pb-2 small font-tech text-muted-tf text-uppercase" style="font-size: 0.68rem; letter-spacing: 0.1em;">Management</div>
+        <a href="../index.html" class="dashboard-nav-item">
+          <i class="bi bi-grid-1x2"></i> Overview
+        </a>
+        <a href="inventory.html" class="dashboard-nav-item">
+          <i class="bi bi-box-seam"></i> Inventory Table
+        </a>
+        <a href="products.html" class="dashboard-nav-item">
+          <i class="bi bi-palette"></i> Products Catalogue
+        </a>
+        <a href="low-stock.html" class="dashboard-nav-item active">
+          <i class="bi bi-exclamation-triangle"></i> Low Stock Alerts
+          <span class="badge bg-danger rounded-pill ms-auto" style="font-size: 0.65rem;">4</span>
+        </a>
+        <a href="inventory-details.html" class="dashboard-nav-item">
+          <i class="bi bi-graph-up"></i> Shade Analytics
+        </a>
+
+        <div class="px-3 pt-4 pb-2 small font-tech text-muted-tf text-uppercase" style="font-size: 0.68rem; letter-spacing: 0.1em;">External</div>
+        <a href="../index.html" class="dashboard-nav-item">
+          <i class="bi bi-shop"></i> View Storefront
+        </a>
+      </nav>
+
+      <div class="p-3 border-top border-tf mt-auto small text-muted-tf">
+        <div class="d-flex align-items-center gap-2">
+          <div class="rounded-circle bg-accent text-white d-flex align-items-center justify-content-center font-tech" style="width: 32px; height: 32px; font-size: 0.75rem;">OP</div>
+          <div class="overflow-hidden">
+            <div class="fw-bold text-primary text-truncate">Ops Lead (Demo)</div>
+            <div style="font-size: 0.72rem;">ops@toneform-demo.com</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+      
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-outline-secondary border-0 p-1 d-lg-none" type="button" onclick="document.getElementById('dashboardSidebar').classList.toggle('show')">
+            <i class="bi bi-list fs-3 text-primary"></i>
+          </button>
+          <div class="font-tech fw-bold text-primary d-none d-sm-block">Critical Stock & Replenishment Queue</div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn-theme-toggle" type="button" aria-label="Toggle theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+                    <!-- Profile Icon Dropdown with Logout -->
+          <div class="dropdown">
+            <button class="btn p-0 border-0 d-flex align-items-center gap-2" type="button" id="profileDropdownOps" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="rounded-circle bg-accent text-white d-flex align-items-center justify-content-center font-tech shadow-sm" style="width: 34px; height: 34px; font-weight: 600; font-size: 0.8rem;">
+                <i class="bi bi-person-fill fs-6"></i>
+              </div>
+              <i class="bi bi-chevron-down text-muted-tf small"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end tf-dropdown-menu shadow-md mt-2" aria-labelledby="profileDropdownOps">
+              <li class="px-3 py-2 border-bottom border-tf mb-1">
+                <div class="font-tech fw-bold text-primary small">Ops Lead (Demo)</div>
+                <div class="text-muted-tf" style="font-size: 0.72rem;">ops.manager@toneform-demo.com</div>
+              </li>
+              <li>
+                <a class="dropdown-item tf-dropdown-item py-2" href="../dashboard.html">
+                  <i class="bi bi-grid-1x2 text-accent me-2"></i> Inventory Overview
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item tf-dropdown-item py-2" href="../index.html">
+                  <i class="bi bi-shop text-muted-tf me-2"></i> View Storefront
+                </a>
+              </li>
+              <li><hr class="dropdown-divider my-1"></li>
+              <li>
+                <a class="dropdown-item tf-dropdown-item text-danger py-2" href="../login.html" onclick="alert('Logged out successfully.')">
+                  <i class="bi bi-box-arrow-right me-2"></i> Log Out
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main class="p-4 p-md-5">
+        
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 pb-2 border-bottom border-tf">
+          <div>
+            <span class="editorial-tag mb-1">REPLENISHMENT DESK</span>
+            <h1 class="display-font fs-2 mb-1">Low Stock & Critical Alerts</h1>
+            <p class="text-muted-tf small mb-0">Shades at or below the 50-unit safety threshold needing manufacturing runs.</p>
+          </div>
+          <div class="mt-3 mt-md-0">
+            <button class="btn-tf-accent btn-tf-sm" onclick="alert('Demo: Triggered automatic replenishment PO for all critical shades.')">
+              <i class="bi bi-lightning-charge me-1"></i> Auto-Order All Depleted
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 1: Critical Stock (Depleted or <25) -->
+        <div class="mb-5">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-exclamation-octagon-fill text-danger fs-5"></i>
+            <h4 class="display-font mb-0">Critical Stock (0–25 Units)</h4>
+          </div>
+
+          <div class="row g-3">
+            <!-- Critical 1 -->
+            <div class="col-lg-6">
+              <div class="card p-3 border-danger border-opacity-25 bg-surface rounded-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge-status badge-status-out-stock">0 Units • Depleted</span>
+                  <span class="small font-tech text-muted-tf">Threshold: 50</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="swatch-chip" style="background-color: #553322; width: 36px; height: 36px;"></span>
+                  <div>
+                    <h5 class="mb-0">R740 Rich Obsidian</h5>
+                    <div class="small text-muted-tf">Velvet Soft-Matte Foundation • Warm Jasper</div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-tf">
+                  <span class="small text-danger"><i class="bi bi-clock-history me-1"></i> Lab Batch #408 scheduled</span>
+                  <button class="btn-tf-primary btn-tf-sm btn-update-stock" data-bs-toggle="modal" data-bs-target="#updateStockModal" data-product-name="Velvet Soft-Matte Foundation" data-shade="R740 Rich Obsidian" data-units="0">
+                    Restock Batch
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Critical 2 -->
+            <div class="col-lg-6">
+              <div class="card p-3 border-warning border-opacity-25 bg-surface rounded-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge-status badge-status-low-stock">18 Units Remaining</span>
+                  <span class="small font-tech text-muted-tf">Threshold: 50</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="swatch-chip" style="background-color: #F8E5D7; width: 36px; height: 36px;"></span>
+                  <div>
+                    <h5 class="mb-0">F110 Cool Alabaster</h5>
+                    <div class="small text-muted-tf">Tone Balance Fluid Foundation • Cool Rose</div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-tf">
+                  <span class="small text-warning"><i class="bi bi-truck me-1"></i> Supplier shipment in transit</span>
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal" data-bs-target="#updateStockModal" data-product-name="Tone Balance Fluid Foundation" data-shade="F110 Cool Alabaster" data-units="18">
+                    Update Stock
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Low Stock (25–50 units) -->
+        <div class="mb-5">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-exclamation-triangle-fill text-warning fs-5"></i>
+            <h4 class="display-font mb-0">Low Stock Buffer (26–50 Units)</h4>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-lg-6">
+              <div class="card p-3 border-tf bg-surface rounded-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge-status badge-status-low-stock">34 Units Remaining</span>
+                  <span class="small font-tech text-muted-tf">Threshold: 50</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="swatch-chip" style="background-color: #F1D6C1; width: 36px; height: 36px;"></span>
+                  <div>
+                    <h5 class="mb-0">F130 Warm Porcelain</h5>
+                    <div class="small text-muted-tf">Tone Balance Fluid Foundation • Warm Peach</div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-tf">
+                  <span class="small text-muted-tf">Estimated days of supply: 6 days</span>
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal" data-bs-target="#updateStockModal" data-product-name="Tone Balance Fluid Foundation" data-shade="F130 Warm Porcelain" data-units="34">
+                    Update Stock
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card p-3 border-tf bg-surface rounded-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge-status badge-status-low-stock">42 Units Remaining</span>
+                  <span class="small font-tech text-muted-tf">Threshold: 50</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="swatch-chip" style="background-color: #CDA081; width: 36px; height: 36px;"></span>
+                  <div>
+                    <h5 class="mb-0">C36 Honey Sand Concealer</h5>
+                    <div class="small text-muted-tf">Radiant Precision Concealer • Full Coverage</div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-tf">
+                  <span class="small text-muted-tf">Estimated days of supply: 8 days</span>
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal" data-bs-target="#updateStockModal" data-product-name="Radiant Precision Concealer" data-shade="C36 Honey Sand" data-units="42">
+                    Update Stock
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Recently Restocked -->
+        <div>
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-check-circle-fill text-success fs-5"></i>
+            <h4 class="display-font mb-0">Recently Restocked Batches</h4>
+          </div>
+
+          <div class="card p-3 border-tf bg-surface rounded-4">
+            <div class="table-responsive">
+              <table class="table table-tf mb-0">
+                <thead>
+                  <tr>
+                    <th>Product & Shade</th>
+                    <th>Batch ID</th>
+                    <th>Restocked Units</th>
+                    <th>Current Level</th>
+                    <th>Completed Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="swatch-chip" style="background-color: #C69472; width: 14px; height: 14px;"></span>
+                        <strong>M420 Warm Neutral 320</strong>
+                      </div>
+                    </td>
+                    <td class="font-tech small">#TF-B2026-09A</td>
+                    <td class="font-tech text-success fw-bold">+350</td>
+                    <td class="font-tech">820 units</td>
+                    <td class="small text-muted-tf">Today, 14:22</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="swatch-chip" style="background-color: #E2BFA6; width: 14px; height: 14px;"></span>
+                        <strong>C28 Soft Sand Concealer</strong>
+                      </div>
+                    </td>
+                    <td class="font-tech small">#TF-B2026-08F</td>
+                    <td class="font-tech text-success fw-bold">+200</td>
+                    <td class="font-tech">540 units</td>
+                    <td class="small text-muted-tf">Sep 28, 2026</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Shared Update Stock Modal -->
+  <div class="modal fade" id="updateStockModal" tabindex="-1" aria-labelledby="updateStockModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-tf">
+        <div class="modal-header modal-header-tf">
+          <div>
+            <span class="editorial-tag mb-0">RESTOCK WORKFLOW</span>
+            <h5 class="modal-title font-display" id="updateStockModalLabel">Record Batch Intake</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="form-update-stock-modal">
+            <div class="mb-3">
+              <label class="form-label-tf">Product & Shade</label>
+              <div class="fw-bold text-primary" id="modal-stock-product-name">Product Name</div>
+              <div class="small text-accent font-tech" id="modal-stock-shade">Shade details</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="modal-stock-units-input" class="form-label-tf">New Unit Total</label>
+              <input type="number" class="form-control-tf font-tech fw-bold" id="modal-stock-units-input" min="0" value="500" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label-tf">Warehouse Bin</label>
+              <input type="text" class="form-control-tf font-tech" value="BIN-NY-A4" readonly>
+            </div>
+
+            <div class="d-flex justify-content-end gap-2 pt-2">
+              <button type="button" class="btn-tf-outline btn-tf-sm" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn-tf-primary btn-tf-sm">Confirm Intake</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

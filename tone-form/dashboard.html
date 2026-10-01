@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Dashboard — TONE / FORM | Operations & Stock Matrix</title>
+  <meta name="description"
+    content="TONE / FORM internal operations and inventory management dashboard. Track product lines, shade stock levels, and replenishment alerts.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- Dashboard Header Bar (Navbar links removed, Brand name kept, Profile dropdown with logout added) -->
+  <header class="tf-dashboard-header sticky-top bg-surface border-bottom border-tf py-2 px-3 px-md-4">
+    <div class="container-xl d-flex justify-content-between align-items-center">
+
+      <!-- Brand Logo (Redirects to Index page) -->
+      <a class="navbar-brand navbar-brand-logo d-inline-flex align-items-center gap-2 text-decoration-none"
+        href="index.html">
+        <svg class="brand-logo-icon" width="26" height="26" viewBox="0 0 48 48" fill="none">
+          <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95" />
+          <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85" />
+          <circle cx="24" cy="24" r="4.5" fill="currentColor" />
+        </svg>
+        <span>TONE <span class="divider">/</span> FORM</span>
+      </a>
+
+      <!-- Right Side Controls: Theme Toggle & Profile Dropdown with Logout -->
+      <div class="d-flex align-items-center gap-3">
+        <!-- Theme Toggle -->
+        <button class="btn-theme-toggle" type="button" aria-label="Toggle theme" title="Toggle light or dark theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+
+        <!-- Profile Icon Dropdown -->
+        <div class="dropdown">
+          <button class="btn p-1 border-0 d-flex align-items-center gap-2" type="button" id="profileDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <div
+              class="rounded-circle bg-accent text-white d-flex align-items-center justify-content-center font-tech shadow-sm"
+              style="width: 36px; height: 36px; font-weight: 600; font-size: 0.85rem;">
+              <i class="bi bi-person-fill fs-5"></i>
+            </div>
+            <div class="d-none d-md-block text-start me-1">
+              <div class="font-tech text-primary lh-1 small fw-bold">Admin Manager</div>
+              <div class="text-muted-tf" style="font-size: 0.7rem;">Ops & Inventory Desk</div>
+            </div>
+            <i class="bi bi-chevron-down text-muted-tf small"></i>
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end tf-dropdown-menu shadow-md mt-2" aria-labelledby="profileDropdown">
+            <li class="px-3 py-2 border-bottom border-tf mb-1">
+              <div class="font-tech fw-bold text-primary small">Admin Lead (Demo)</div>
+              <div class="text-muted-tf" style="font-size: 0.72rem;">ops.admin@toneform-demo.com</div>
+              <span class="badge bg-card border border-tf font-tech text-accent mt-1"
+                style="font-size: 0.62rem;">INVENTORY MANAGER</span>
+            </li>
+            <li>
+              <a class="dropdown-item tf-dropdown-item py-2" href="dashboard/index.html">
+                <i class="bi bi-layout-sidebar text-accent me-2"></i> Full Ops Desk View
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item tf-dropdown-item py-2" href="index.html">
+                <i class="bi bi-shop text-muted-tf me-2"></i> View Live Storefront
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider my-1">
+            </li>
+            <li>
+              <a class="dropdown-item tf-dropdown-item text-danger py-2" href="login.html"
+                onclick="alert('Logged out successfully.')">
+                <i class="bi bi-box-arrow-right me-2"></i> Log Out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Dashboard Page Header -->
+  <header class="section-padding-sm bg-surface border-bottom border-tf">
+    <div class="container-xl">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-lg-7">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="editorial-tag mb-0">INTERNAL OPERATIONS</span>
+            <span class="badge bg-card font-tech text-accent border border-tf">Inventory Dashboard</span>
+          </div>
+          <h1 class="editorial-title mb-2">Inventory Management & Stock Matrix</h1>
+          <p class="editorial-subtitle mb-0">
+            Real-time tracking of shade stock, safety replenishment triggers, batch velocity, and warehouse
+            distributions.
+          </p>
+        </div>
+        <div class="col-lg-5 text-lg-end mt-4 mt-lg-0 d-flex flex-wrap gap-2 justify-content-lg-end">
+          <a href="dashboard/index.html" class="btn-tf-outline btn-tf-sm">
+            <i class="bi bi-layout-sidebar me-1"></i> Full Ops Desk View
+          </a>
+          <button class="btn-tf-primary btn-tf-sm" data-bs-toggle="modal" data-bs-target="#updateStockModal">
+            <i class="bi bi-plus-lg me-1"></i> Adjust Stock Intake
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Dashboard Content -->
+  <main class="section-padding">
+    <div class="container-xl">
+
+      <!-- 4 KPI Summary Cards -->
+      <div class="row g-3 mb-4">
+        <div class="col-sm-6 col-xl-3">
+          <div class="kpi-card">
+            <div class="d-flex justify-content-between align-items-start">
+              <span class="small font-tech text-muted-tf text-uppercase">Total Formulations</span>
+              <i class="bi bi-droplet-half text-accent fs-5"></i>
+            </div>
+            <div class="kpi-number">6 Lines</div>
+            <div class="small text-muted-tf">48 Foundation & 24 Concealer Shades</div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="kpi-card">
+            <div class="d-flex justify-content-between align-items-start">
+              <span class="small font-tech text-muted-tf text-uppercase">Total Units in Stock</span>
+              <i class="bi bi-boxes text-primary fs-5"></i>
+            </div>
+            <div class="kpi-number">14,820</div>
+            <div class="small text-success"><i class="bi bi-check2"></i> 94% Operational Fill Rate</div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="kpi-card">
+            <div class="d-flex justify-content-between align-items-start">
+              <span class="small font-tech text-muted-tf text-uppercase">Low Stock Alert</span>
+              <i class="bi bi-exclamation-triangle text-warning fs-5"></i>
+            </div>
+            <div class="kpi-number text-warning">4 Shades</div>
+            <div class="small text-muted-tf">Below 50 units replenishment trigger</div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="kpi-card">
+            <div class="d-flex justify-content-between align-items-start">
+              <span class="small font-tech text-muted-tf text-uppercase">Out of Stock</span>
+              <i class="bi bi-x-circle text-danger fs-5"></i>
+            </div>
+            <div class="kpi-number text-danger">1 Shade</div>
+            <div class="small text-muted-tf">R740 Rich Obsidian (In lab testing)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shade Families Visual Bar Breakdown -->
+      <div class="card p-4 border-tf bg-surface rounded-4 mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div>
+            <h5 class="mb-0">Popular Shade Family Inventory Density</h5>
+            <span class="small text-muted-tf">Proportional units allocated across skin depths</span>
+          </div>
+          <span class="badge bg-card font-tech text-primary border border-tf">Live Sync</span>
+        </div>
+
+        <!-- Color Distribution Bar -->
+        <div class="progress mb-3" style="height: 14px; border-radius: 999px; background: var(--tf-border);">
+          <div class="progress-bar" role="progressbar" style="width: 22%; background-color: #F4E2D2;"
+            title="Fair Tiers (22%)"></div>
+          <div class="progress-bar" role="progressbar" style="width: 32%; background-color: #C69472;"
+            title="Medium Tiers (32%)"></div>
+          <div class="progress-bar" role="progressbar" style="width: 26%; background-color: #A7704C;"
+            title="Tan Tiers (26%)"></div>
+          <div class="progress-bar" role="progressbar" style="width: 20%; background-color: #543220;"
+            title="Deep Tiers (20%)"></div>
+        </div>
+
+        <!-- Legend -->
+        <div class="row g-2 text-muted-tf small font-tech">
+          <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+            <span class="swatch-chip" style="background-color: #F4E2D2; width: 12px; height: 12px;"></span>
+            <span>Fair Spectrum (3,260 units)</span>
+          </div>
+          <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+            <span class="swatch-chip" style="background-color: #C69472; width: 12px; height: 12px;"></span>
+            <span>Medium Spectrum (4,740 units)</span>
+          </div>
+          <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+            <span class="swatch-chip" style="background-color: #A7704C; width: 12px; height: 12px;"></span>
+            <span>Tan Spectrum (3,850 units)</span>
+          </div>
+          <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+            <span class="swatch-chip" style="background-color: #543220; width: 12px; height: 12px;"></span>
+            <span>Deep Spectrum (2,970 units)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter & Search Toolbar -->
+      <div class="card p-3 border-tf bg-surface rounded-4 mb-4">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-4">
+            <div class="input-group">
+              <span class="input-group-text bg-card border-tf text-muted-tf"><i class="bi bi-search"></i></span>
+              <input type="text" class="form-control-tf border-start-0" id="inv-search-input"
+                placeholder="Search by shade code or name...">
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <select class="form-select-tf" id="inv-category-filter">
+              <option value="all">Category: All Categories</option>
+              <option value="foundation">Fluid Foundation</option>
+              <option value="concealer">Precision Concealer</option>
+              <option value="powder">Setting Powder</option>
+            </select>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <select class="form-select-tf" id="inv-status-filter">
+              <option value="all">Status: All Statuses</option>
+              <option value="in-stock">In Stock (&gt;50)</option>
+              <option value="low-stock">Low Stock (&le;50)</option>
+              <option value="out-stock">Out of Stock (0)</option>
+            </select>
+          </div>
+
+          <div class="col-md-2 text-md-end">
+            <span class="font-tech small text-muted-tf">10 Entries Listed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master Inventory Table -->
+      <div class="card border-tf bg-surface rounded-4 overflow-hidden shadow-sm mb-5">
+        <div class="table-responsive">
+          <table class="table table-tf mb-0">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Shade & Swatch</th>
+                <th>Undertone</th>
+                <th>Available Units</th>
+                <th>Status</th>
+                <th>Last Batch</th>
+                <th class="text-end">Action</th>
+              </tr>
+            </thead>
+            <tbody id="inventory-table-body">
+
+              <tr data-category="foundation" data-status="in-stock">
+                <td>
+                  <div class="fw-bold">Tone Balance Fluid Foundation</div>
+                  <span class="small text-muted-tf">SKU: TF-FD-120</span>
+                </td>
+                <td><span class="badge bg-surface text-primary font-tech">Foundation</span></td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="swatch-chip" style="background-color: #F6E4D6; width: 16px; height: 16px;"></span>
+                    <span class="font-tech fw-bold">F120 Neutral Ivory</span>
+                  </div>
+                </td>
+                <td>Neutral (N)</td>
+                <td class="font-tech fw-bold">420 units</td>
+                <td><span class="badge-status badge-status-in-stock">In Stock</span></td>
+                <td class="small font-tech text-muted-tf">Sep 28, 2026</td>
+                <td class="text-end">
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal"
+                    data-bs-target="#updateStockModal" data-product-name="Tone Balance Fluid Foundation"
+                    data-shade="F120 Neutral Ivory" data-units="420">
+                    Update
+                  </button>
+                </td>
+              </tr>
+
+              <tr data-category="foundation" data-status="in-stock">
+                <td>
+                  <div class="fw-bold">Tone Balance Fluid Foundation</div>
+                  <span class="small text-muted-tf">SKU: TF-FD-220</span>
+                </td>
+                <td><span class="badge bg-surface text-primary font-tech">Foundation</span></td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="swatch-chip" style="background-color: #ECCBB2; width: 16px; height: 16px;"></span>
+                    <span class="font-tech fw-bold">F220 Neutral Bisque</span>
+                  </div>
+                </td>
+                <td>Neutral (N)</td>
+                <td class="font-tech fw-bold">385 units</td>
+                <td><span class="badge-status badge-status-in-stock">In Stock</span></td>
+                <td class="small font-tech text-muted-tf">Sep 24, 2026</td>
+                <td class="text-end">
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal"
+                    data-bs-target="#updateStockModal" data-product-name="Tone Balance Fluid Foundation"
+                    data-shade="F220 Neutral Bisque" data-units="385">
+                    Update
+                  </button>
+                </td>
+              </tr>
+
+              <tr data-category="foundation" data-status="in-stock">
+                <td>
+                  <div class="fw-bold">Tone Balance Fluid Foundation</div>
+                  <span class="small text-muted-tf">SKU: TF-FD-320</span>
+                </td>
+                <td><span class="badge bg-surface text-primary font-tech">Foundation</span></td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="swatch-chip" style="background-color: #DEB393; width: 16px; height: 16px;"></span>
+                    <span class="font-tech fw-bold">L320 Warm Sand</span>
+                  </div>
+                </td>
+                <td>Warm (W)</td>
+                <td class="font-tech fw-bold">610 units</td>
+                <td><span class="badge-status badge-status-in-stock">In Stock</span></td>
+                <td class="small font-tech text-muted-tf">Today, 09:30</td>
+                <td class="text-end">
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal"
+                    data-bs-target="#updateStockModal" data-product-name="Tone Balance Fluid Foundation"
+                    data-shade="L320 Warm Sand" data-units="610">
+                    Update
+                  </button>
+                </td>
+              </tr>
+
+              <tr data-category="foundation" data-status="in-stock">
+                <td>
+                  <div class="fw-bold">Tone Balance Fluid Foundation</div>
+                  <span class="small text-muted-tf">SKU: TF-FD-420</span>
+                </td>
+                <td><span class="badge bg-surface text-primary font-tech">Foundation</span></td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="swatch-chip" style="background-color: #C69472; width: 16px; height: 16px;"></span>
+                    <span class="font-tech fw-bold">M420 Warm Neutral 320</span>
+                  </div>
+                </td>
+                <td>Neutral (N)</td>
+                <td class="font-tech fw-bold">820 units</td>
+                <td><span class="badge-status badge-status-in-stock">In Stock</span></td>
+                <td class="small font-tech text-muted-tf">Today, 14:22</td>
+                <td class="text-end">
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal"
+                    data-bs-target="#updateStockModal" data-product-name="Tone Balance Fluid Foundation"
+                    data-shade="M420 Warm Neutral 320" data-units="820">
+                    Update
+                  </button>
+                </td>
+              </tr>
+
+              <tr data-category="foundation" data-status="low-stock">
+                <td>
+                  <div class="fw-bold">Tone Balance Fluid Foundation</div>
+                  <span class="small text-muted-tf">SKU: TF-FD-130</span>
+                </td>
+                <td><span class="badge bg-surface text-primary font-tech">Foundation</span></td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="swatch-chip" style="background-color: #F1D6C1; width: 16px; height: 16px;"></span>
+                    <span class="font-tech fw-bold">F130 Warm Porcelain</span>
+                  </div>
+                </td>
+                <td>Warm (W)</td>
+                <td class="font-tech fw-bold text-warning">34 units</td>
+                <td><span class="badge-status badge-status-low-stock">Low Stock</span></td>
+                <td class="small font-tech text-muted-tf">Sep 15, 2026</td>
+                <td class="text-end">
+                  <button class="btn-tf-accent btn-tf-sm btn-update-stock" data-bs-toggle="modal"
+                    data-bs-target="#updateStockModal" data-product-name="Tone Balance Fluid Foundation"
+                    data-shade="F130 Warm Porcelain" data-units="34">
+                    Restock
+                  </button>
+                </td>
+              </tr>
+
+              <tr data-category="concealer" data-status="in-stock">
+                <td>
+                  <div class="fw-bold">Radiant Precision Concealer</div>
+                  <span class="small text-muted-tf">SKU: TF-CN-028</span>
+                </td>
+                <td><span class="badge bg-surface text-secondary font-tech">Concealer</span></td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="swatch-chip" style="background-color: #E2BFA6; width: 16px; height: 16px;"></span>
+                    <span class="font-tech fw-bold">C28 Soft Sand</span>
+                  </div>
+                </td>
+                <td>Neutral (N)</td>
+                <td class="font-tech fw-bold">540 units</td>
+                <td><span class="badge-status badge-status-in-stock">In Stock</span></td>
+                <td class="small font-tech text-muted-tf">Today, 11:05</td>
+                <td class="text-end">
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal"
+                    data-bs-target="#updateStockModal" data-product-name="Radiant Precision Concealer"
+                    data-shade="C28 Soft Sand" data-units="540">
+                    Update
+                  </button>
+                </td>
+              </tr>
+
+              <tr data-category="concealer" data-status="low-stock">
+                <td>
+                  <div class="fw-bold">Radiant Precision Concealer</div>
+                  <span class="small text-muted-tf">SKU: TF-CN-036</span>
+                </td>
+                <td><span class="badge bg-surface text-secondary font-tech">Concealer</span></td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="swatch-chip" style="background-color: #CDA081; width: 16px; height: 16px;"></span>
+                    <span class="font-tech fw-bold">C36 Honey Sand</span>
+                  </div>
+                </td>
+                <td>Warm (W)</td>
+                <td class="font-tech fw-bold text-warning">42 units</td>
+                <td><span class="badge-status badge-status-low-stock">Low Stock</span></td>
+                <td class="small font-tech text-muted-tf">Sep 18, 2026</td>
+                <td class="text-end">
+                  <button class="btn-tf-accent btn-tf-sm btn-update-stock" data-bs-toggle="modal"
+                    data-bs-target="#updateStockModal" data-product-name="Radiant Precision Concealer"
+                    data-shade="C36 Honey Sand" data-units="42">
+                    Restock
+                  </button>
+                </td>
+              </tr>
+
+              <tr data-category="foundation" data-status="out-stock">
+                <td>
+                  <div class="fw-bold">Velvet Soft-Matte Foundation</div>
+                  <span class="small text-muted-tf">SKU: TF-FM-740</span>
+                </td>
+                <td><span class="badge bg-surface text-primary font-tech">Foundation</span></td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="swatch-chip" style="background-color: #553322; width: 16px; height: 16px;"></span>
+                    <span class="font-tech fw-bold">R740 Rich Obsidian</span>
+                  </div>
+                </td>
+                <td>Warm Jasper (W)</td>
+                <td class="font-tech fw-bold text-danger">0 units</td>
+                <td><span class="badge-status badge-status-out-stock">Out of Stock</span></td>
+                <td class="small font-tech text-muted-tf">Sep 29, 2026</td>
+                <td class="text-end">
+                  <button class="btn-tf-accent btn-tf-sm btn-update-stock" data-bs-toggle="modal"
+                    data-bs-target="#updateStockModal" data-product-name="Velvet Soft-Matte Foundation"
+                    data-shade="R740 Rich Obsidian" data-units="0">
+                    Bottle Batch
+                  </button>
+                </td>
+              </tr>
+
+              <tr data-category="foundation" data-status="in-stock">
+                <td>
+                  <div class="fw-bold">Tone Balance Fluid Foundation</div>
+                  <span class="small text-muted-tf">SKU: TF-FD-520</span>
+                </td>
+                <td><span class="badge bg-surface text-primary font-tech">Foundation</span></td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="swatch-chip" style="background-color: #A7704C; width: 16px; height: 16px;"></span>
+                    <span class="font-tech fw-bold">T520 Neutral Toffee</span>
+                  </div>
+                </td>
+                <td>Neutral (N)</td>
+                <td class="font-tech fw-bold">470 units</td>
+                <td><span class="badge-status badge-status-in-stock">In Stock</span></td>
+                <td class="small font-tech text-muted-tf">Sep 26, 2026</td>
+                <td class="text-end">
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal"
+                    data-bs-target="#updateStockModal" data-product-name="Tone Balance Fluid Foundation"
+                    data-shade="T520 Neutral Toffee" data-units="470">
+                    Update
+                  </button>
+                </td>
+              </tr>
+
+              <tr data-category="powder" data-status="in-stock">
+                <td>
+                  <div class="fw-bold">Velvet Translucent Setting Powder</div>
+                  <span class="small text-muted-tf">SKU: TF-PW-001</span>
+                </td>
+                <td><span class="badge bg-surface text-secondary font-tech">Powder</span></td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="swatch-chip" style="background-color: #F8F3ED; width: 16px; height: 16px;"></span>
+                    <span class="font-tech fw-bold">Universal Translucent</span>
+                  </div>
+                </td>
+                <td>Neutral Universal</td>
+                <td class="font-tech fw-bold">750 units</td>
+                <td><span class="badge-status badge-status-in-stock">In Stock</span></td>
+                <td class="small font-tech text-muted-tf">Sep 20, 2026</td>
+                <td class="text-end">
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal"
+                    data-bs-target="#updateStockModal" data-product-name="Velvet Translucent Setting Powder"
+                    data-shade="Universal Translucent" data-units="750">
+                    Update
+                  </button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Stock Update Modal -->
+  <div class="modal fade" id="updateStockModal" tabindex="-1" aria-labelledby="updateStockModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-tf">
+        <div class="modal-header modal-header-tf">
+          <div>
+            <span class="editorial-tag mb-0">OPERATIONS LOGISTICS</span>
+            <h5 class="modal-title font-display" id="updateStockModalLabel">Adjust Inventory Units</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="form-update-stock-modal">
+            <div class="mb-3">
+              <label class="form-label-tf">Product Line</label>
+              <div class="fw-bold text-primary" id="modal-stock-product-name">Tone Balance Fluid Foundation</div>
+              <div class="small text-accent font-tech" id="modal-stock-shade">Shade: F120 Neutral Ivory</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="modal-stock-units-input" class="form-label-tf">Available Quantity (Units)</label>
+              <input type="number" class="form-control-tf font-tech fw-bold" id="modal-stock-units-input" min="0"
+                value="420" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="modal-stock-notes" class="form-label-tf">Adjustment Reason</label>
+              <select class="form-select-tf" id="modal-stock-notes">
+                <option value="batch">New Lab Batch Bottled</option>
+                <option value="audit">Physical Cycle Count Audit</option>
+                <option value="reserved">Kit Assembly Allocation</option>
+                <option value="damaged">Damage / Quality Control Removal</option>
+              </select>
+            </div>
+
+            <div class="d-flex justify-content-end gap-2 pt-2">
+              <button type="button" class="btn-tf-outline btn-tf-sm" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn-tf-primary btn-tf-sm">Confirm Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimal Operational Dashboard Footer (Main Footer Removed) -->
+  <footer class="py-3 bg-surface border-top border-tf mt-5 text-center">
+    <div class="container-xl d-flex flex-wrap justify-content-between align-items-center font-tech text-muted-tf"
+      style="font-size: 0.75rem;">
+      <div>&copy; 2026 TONE / FORM. Inventory Management System.</div>
+      <div>System Status: <span class="text-success fw-bold"><i class="bi bi-circle-fill me-1"
+            style="font-size: 0.5rem;"></i> Active Ops</span></div>
+    </div>
+  </footer>
+
+  <!-- JS Dependencies -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

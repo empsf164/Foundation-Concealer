@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — TONE / FORM Commercial Template</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-surface">
+
+  <!-- Documentation Navbar -->
+  <nav class="navbar tf-navbar py-2 border-bottom border-tf bg-card sticky-top">
+    <div class="container-xl d-flex justify-content-between align-items-center">
+      <a class="navbar-brand navbar-brand-logo" href="../index.html">
+        <svg class="brand-logo-icon" width="24" height="24" viewBox="0 0 48 48" fill="none">
+          <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
+          <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
+          <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+        </svg>
+        <span>TONE <span class="divider">/</span> FORM</span>
+        <span class="badge bg-surface font-tech text-accent ms-2" style="font-size: 0.65rem;">DOCS v1.0</span>
+      </a>
+
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn-theme-toggle" type="button" aria-label="Toggle theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <a href="../index.html" class="btn-tf-primary btn-tf-sm">
+          <i class="bi bi-shop me-1"></i> Live Storefront
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-xl py-5">
+    <div class="row g-5">
+      
+      <!-- Left: Navigation Table of Contents -->
+      <div class="col-lg-3">
+        <div class="sticky-top" style="top: 90px;">
+          <div class="card p-3 border-tf bg-card rounded-4">
+            <h6 class="font-tech text-uppercase text-muted-tf mb-3" style="font-size: 0.72rem; letter-spacing: 0.1em;">Documentation</h6>
+            <nav class="nav flex-column small font-tech">
+              <a class="nav-link px-0 py-1 text-primary fw-bold" href="#intro">1. Introduction & Concept</a>
+              <a class="nav-link px-0 py-1 text-muted-tf" href="#tech-stack">2. Technology Stack</a>
+              <a class="nav-link px-0 py-1 text-muted-tf" href="#design-system">3. Design System & Theme</a>
+              <a class="nav-link px-0 py-1 text-muted-tf" href="#pages">4. Compact Page Structure</a>
+              <a class="nav-link px-0 py-1 text-muted-tf" href="#components">5. Interactive Engines</a>
+              <a class="nav-link px-0 py-1 text-muted-tf" href="#dashboard-guide">6. Internal Inventory Ops</a>
+              <a class="nav-link px-0 py-1 text-muted-tf" href="#accessibility">7. Accessibility & Motion</a>
+              <a class="nav-link px-0 py-1 text-muted-tf" href="#customization">8. Customization Guide</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Documentation Content -->
+      <div class="col-lg-9">
+        <div class="card p-4 p-md-5 border-tf bg-card rounded-4 shadow-sm">
+          
+          <!-- 1. Introduction -->
+          <section id="intro" class="mb-5 pb-5 border-bottom border-tf">
+            <span class="editorial-tag">Overview</span>
+            <h1 class="display-font mb-3">TONE / FORM Template Documentation</h1>
+            <p class="lead text-muted-tf mb-4">
+              A luxury beauty-tech commercial HTML5 template engineered specifically for complexion cosmetics, shade discovery algorithms, and internal inventory management.
+            </p>
+            <div class="p-3 bg-surface rounded-3 border border-tf small">
+              <strong>Brand Tagline:</strong> "Your Shade. Your Match. Your Finish."<br>
+              <strong>Brand Personality:</strong> Minimalist luxury, editorial precision, inclusive depth architecture, non-medical beauty guidance.
+            </div>
+          </section>
+
+          <!-- 2. Technology Stack -->
+          <section id="tech-stack" class="mb-5 pb-5 border-bottom border-tf">
+            <span class="editorial-tag">Foundation</span>
+            <h2 class="display-font mb-3">2. Technology Stack</h2>
+            <p class="text-muted-tf mb-4">
+              Constructed strictly without heavy JavaScript single-page application frameworks to ensure instant loading, full SEO discoverability, and simple customization:
+            </p>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="p-3 bg-surface rounded-3 border border-tf">
+                  <div class="font-tech fw-bold text-primary mb-1">Bootstrap 5.3.3</div>
+                  <div class="small text-muted-tf">Responsive grid system, modals, dropdowns, and accessible flexbox containers.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 bg-surface rounded-3 border border-tf">
+                  <div class="font-tech fw-bold text-primary mb-1">Vanilla CSS3 & CSS Variables</div>
+                  <div class="small text-muted-tf">Bespoke design system featuring warm ivory surfaces, deep espresso typography, and dark mode tokens.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 bg-surface rounded-3 border border-tf">
+                  <div class="font-tech fw-bold text-primary mb-1">Vanilla JavaScript (ES6+)</div>
+                  <div class="small text-muted-tf">Modular functions driving shade swatch selection, wizard navigation, quiz scoring, and real-time total calculations.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 bg-surface rounded-3 border border-tf">
+                  <div class="font-tech fw-bold text-primary mb-1">GSAP 3.12.5</div>
+                  <div class="small text-muted-tf">Subtle, non-disruptive entrance animations respecting <code>prefers-reduced-motion</code>.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Design System -->
+          <section id="design-system" class="mb-5 pb-5 border-bottom border-tf">
+            <span class="editorial-tag">Styling Architecture</span>
+            <h2 class="display-font mb-3">3. Design System & Theme Engine</h2>
+            <p class="text-muted-tf mb-3">
+              Themes toggle dynamically via the <code>data-bs-theme</code> attribute on <code>&lt;html&gt;</code> and persist in <code>localStorage</code>.
+            </p>
+            <div class="table-responsive mb-4">
+              <table class="table table-tf small">
+                <thead>
+                  <tr>
+                    <th>Token</th>
+                    <th>Light Mode Value</th>
+                    <th>Dark Mode Value</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>--tf-primary</code></td>
+                    <td>#1C1917 (Espresso)</td>
+                    <td>#F5EFEB (Warm Off-White)</td>
+                    <td>High-contrast text and primary CTA buttons</td>
+                  </tr>
+                  <tr>
+                    <td><code>--tf-bg</code></td>
+                    <td>#FAF7F2 (Warm Ivory)</td>
+                    <td>#12100E (Deep Charcoal)</td>
+                    <td>Page canvas background</td>
+                  </tr>
+                  <tr>
+                    <td><code>--tf-surface</code></td>
+                    <td>#F4EFEA (Soft Cream)</td>
+                    <td>#1A1715 (Rich Dark)</td>
+                    <td>Section backgrounds and inputs</td>
+                  </tr>
+                  <tr>
+                    <td><code>--tf-accent</code></td>
+                    <td>#C87D6F (Terracotta/Rose)</td>
+                    <td>#D48E80 (Warm Rose Glow)</td>
+                    <td>Interactive focus, active pills, badges</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 4. Pages Structure -->
+          <section id="pages" class="mb-5 pb-5 border-bottom border-tf">
+            <span class="editorial-tag">Files & Layouts</span>
+            <h2 class="display-font mb-3">4. Compact Page Structure</h2>
+            <ul class="list-unstyled text-muted-tf small">
+              <li class="mb-2"><strong class="text-primary font-tech">index.html:</strong> Editorial beauty-tech homepage with hero match card, undertone preview, kit highlight, and photo reviews.</li>
+              <li class="mb-2"><strong class="text-primary font-tech">shop.html:</strong> Product catalogue with category filters, finish/undertone filters, and quick-view modal.</li>
+              <li class="mb-2"><strong class="text-primary font-tech">product-details.html:</strong> Full PDP with multi-angle gallery, interactive shade selector, and 7-tier shade table.</li>
+              <li class="mb-2"><strong class="text-primary font-tech">shade-match.html:</strong> 5-step interactive complexion wizard calculating custom foundation and sister concealer matches.</li>
+              <li class="mb-2"><strong class="text-primary font-tech">undertone-analyzer.html:</strong> Educational optical quiz analyzing vein, jewelry, and contrast cues.</li>
+              <li class="mb-2"><strong class="text-primary font-tech">kit-builder.html:</strong> 4-step custom base builder with live pricing calculation and bundle discount.</li>
+              <li class="mb-2"><strong class="text-primary font-tech">reviews.html:</strong> Customer photo review masonry gallery with depth filters and review submission modal.</li>
+              <li class="mb-2"><strong class="text-primary font-tech">dashboard/*.html:</strong> Internal inventory management overview, stock ledger, low-stock alerts, and SKU analytics.</li>
+            </ul>
+          </section>
+
+          <!-- 5. Interactive Engines -->
+          <section id="components" class="mb-5 pb-5 border-bottom border-tf">
+            <span class="editorial-tag">JavaScript Functionality</span>
+            <h2 class="display-font mb-3">5. Interactive Engines</h2>
+            <p class="text-muted-tf small mb-3">
+              All front-end demo behaviors are implemented in clean, vanilla JavaScript inside <code>assets/js/main.js</code>:
+            </p>
+            <div class="p-3 bg-surface rounded-3 border border-tf small font-tech text-muted-tf">
+              • initNavbar(): Scroll detection and escape key closing<br>
+              • initShadeSwatches(): Live swatch selection and label synchronization<br>
+              • initShadeMatcherWizard(): 5-step wizard state machine with confidence score<br>
+              • initUndertoneAnalyzer(): Quiz score tallying and educational profile outputs<br>
+              • initKitBuilder(): Persistent state calculation with 15% discount math<br>
+              • initDashboardEngine(): Client-side inventory search, filtering, and restock modal
+            </div>
+          </section>
+
+          <!-- 6. Internal Inventory Dashboard -->
+          <section id="dashboard-guide" class="mb-5 pb-5 border-bottom border-tf">
+            <span class="editorial-tag">Internal Operations</span>
+            <h2 class="display-font mb-3">6. Internal Inventory Management</h2>
+            <p class="text-muted-tf small mb-3">
+              Designed exclusively for brand operators to monitor stock levels without jarring visual discordance. Key pages include:
+            </p>
+            <div class="row g-2 small">
+              <div class="col-md-6"><a href="../dashboard/index.html" class="p-2 border border-tf rounded bg-surface d-block text-primary">Overview (KPIs & Movement Log) &rarr;</a></div>
+              <div class="col-md-6"><a href="../dashboard/inventory.html" class="p-2 border border-tf rounded bg-surface d-block text-primary">Master Inventory Ledger &rarr;</a></div>
+              <div class="col-md-6"><a href="../dashboard/products.html" class="p-2 border border-tf rounded bg-surface d-block text-primary">Product Lines Catalogue &rarr;</a></div>
+              <div class="col-md-6"><a href="../dashboard/low-stock.html" class="p-2 border border-tf rounded bg-surface d-block text-primary">Low Stock Replenishment &rarr;</a></div>
+            </div>
+          </section>
+
+          <!-- 7. Accessibility -->
+          <section id="accessibility" class="mb-5 pb-5 border-bottom border-tf">
+            <span class="editorial-tag">Inclusivity</span>
+            <h2 class="display-font mb-3">7. Accessibility & Motion</h2>
+            <p class="text-muted-tf small mb-0">
+              Complies with WCAG guidelines: ARIA labels on all swatch chips, focus rings on all interactive elements, keyboard-accessible modals, and full support for <code>@media (prefers-reduced-motion: reduce)</code>.
+            </p>
+          </section>
+
+          <!-- 8. Customization -->
+          <section id="customization">
+            <span class="editorial-tag">Developer Notes</span>
+            <h2 class="display-font mb-3">8. Customization Guide</h2>
+            <p class="text-muted-tf small mb-3">
+              To customize shades, edit the <code>shadeDatabase</code> object in <code>assets/js/main.js</code>. To modify brand colors, update the CSS variables in <code>assets/css/style.css</code>.
+            </p>
+            <a href="../index.html" class="btn-tf-primary btn-tf-sm">Return to Live Storefront</a>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

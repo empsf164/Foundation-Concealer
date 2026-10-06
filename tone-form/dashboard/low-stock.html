@@ -17,7 +17,7 @@
     <!-- Sidebar -->
     <aside class="dashboard-sidebar" id="dashboardSidebar">
       <div class="p-3 border-bottom border-tf d-flex align-items-center justify-content-between">
-                <a class="navbar-brand-logo fs-6 text-primary" href="../index.html">
+        <a class="navbar-brand-logo fs-6 text-primary" href="../index.html">
           <svg class="brand-logo-icon" width="22" height="22" viewBox="0 0 48 48" fill="none">
             <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
             <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
@@ -25,7 +25,6 @@
           </svg>
           <span>TONE <span class="divider">/</span> FORM</span>
         </a>
-        <span class="badge bg-surface font-tech text-accent" style="font-size: 0.65rem;">OPS DESK</span>
       </div>
 
       <nav class="py-3 flex-grow-1 overflow-y-auto">
@@ -69,7 +68,7 @@
       
       <header class="dashboard-topbar">
         <div class="d-flex align-items-center gap-3">
-          <button class="btn btn-outline-secondary border-0 p-1 d-lg-none" type="button" onclick="document.getElementById('dashboardSidebar').classList.toggle('show')">
+          <button class="btn btn-outline-secondary border-0 p-1 dashboard-hamburger-btn d-xl-none" type="button" onclick="document.getElementById('dashboardSidebar').classList.toggle('show')">
             <i class="bi bi-list fs-3 text-primary"></i>
           </button>
           <div class="font-tech fw-bold text-primary d-none d-sm-block">Critical Stock & Replenishment Queue</div>
@@ -115,14 +114,14 @@
 
       <main class="p-4 p-md-5">
         
-        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 pb-2 border-bottom border-tf">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 pb-2 border-bottom border-tf gap-3">
           <div>
             <span class="editorial-tag mb-1">REPLENISHMENT DESK</span>
             <h1 class="display-font fs-2 mb-1">Low Stock & Critical Alerts</h1>
             <p class="text-muted-tf small mb-0">Shades at or below the 50-unit safety threshold needing manufacturing runs.</p>
           </div>
-          <div class="mt-3 mt-md-0">
-            <button class="btn-tf-accent btn-tf-sm" onclick="alert('Demo: Triggered automatic replenishment PO for all critical shades.')">
+          <div class="mt-3 mt-md-0 d-flex flex-column flex-sm-row gap-2 align-items-stretch align-items-sm-center">
+            <button class="btn-tf-accent btn-tf-sm text-center w-100 w-sm-auto" onclick="alert('Demo: Triggered automatic replenishment PO for all critical shades.')">
               <i class="bi bi-lightning-charge me-1"></i> Auto-Order All Depleted
             </button>
           </div>
@@ -150,9 +149,9 @@
                     <div class="small text-muted-tf">Velvet Soft-Matte Foundation • Warm Jasper</div>
                   </div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-tf">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mt-3 pt-2 border-top border-tf gap-2">
                   <span class="small text-danger"><i class="bi bi-clock-history me-1"></i> Lab Batch #408 scheduled</span>
-                  <button class="btn-tf-primary btn-tf-sm btn-update-stock" data-bs-toggle="modal" data-bs-target="#updateStockModal" data-product-name="Velvet Soft-Matte Foundation" data-shade="R740 Rich Obsidian" data-units="0">
+                  <button class="btn-tf-primary btn-tf-sm btn-update-stock w-100 w-sm-auto text-center" data-bs-toggle="modal" data-bs-target="#updateStockModal" data-product-name="Velvet Soft-Matte Foundation" data-shade="R740 Rich Obsidian" data-units="0">
                     Restock Batch
                   </button>
                 </div>
@@ -173,9 +172,9 @@
                     <div class="small text-muted-tf">Tone Balance Fluid Foundation • Cool Rose</div>
                   </div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-tf">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mt-3 pt-2 border-top border-tf gap-2">
                   <span class="small text-warning"><i class="bi bi-truck me-1"></i> Supplier shipment in transit</span>
-                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal" data-bs-target="#updateStockModal" data-product-name="Tone Balance Fluid Foundation" data-shade="F110 Cool Alabaster" data-units="18">
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock w-100 w-sm-auto text-center" data-bs-toggle="modal" data-bs-target="#updateStockModal" data-product-name="Tone Balance Fluid Foundation" data-shade="F110 Cool Alabaster" data-units="18">
                     Update Stock
                   </button>
                 </div>
@@ -205,9 +204,9 @@
                     <div class="small text-muted-tf">Tone Balance Fluid Foundation • Warm Peach</div>
                   </div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-tf">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mt-3 pt-2 border-top border-tf gap-2">
                   <span class="small text-muted-tf">Estimated days of supply: 6 days</span>
-                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal" data-bs-target="#updateStockModal" data-product-name="Tone Balance Fluid Foundation" data-shade="F130 Warm Porcelain" data-units="34">
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock w-100 w-sm-auto text-center" data-bs-toggle="modal" data-bs-target="#updateStockModal" data-product-name="Tone Balance Fluid Foundation" data-shade="F130 Warm Porcelain" data-units="34">
                     Update Stock
                   </button>
                 </div>
@@ -227,9 +226,9 @@
                     <div class="small text-muted-tf">Radiant Precision Concealer • Full Coverage</div>
                   </div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-tf">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mt-3 pt-2 border-top border-tf gap-2">
                   <span class="small text-muted-tf">Estimated days of supply: 8 days</span>
-                  <button class="btn-tf-outline btn-tf-sm btn-update-stock" data-bs-toggle="modal" data-bs-target="#updateStockModal" data-product-name="Radiant Precision Concealer" data-shade="C36 Honey Sand" data-units="42">
+                  <button class="btn-tf-outline btn-tf-sm btn-update-stock w-100 w-sm-auto text-center" data-bs-toggle="modal" data-bs-target="#updateStockModal" data-product-name="Radiant Precision Concealer" data-shade="C36 Honey Sand" data-units="42">
                     Update Stock
                   </button>
                 </div>
@@ -330,6 +329,11 @@
       </div>
     </div>
   </div>
+
+  <!-- Back to Top Button -->
+  <button id="btn-back-to-top" class="btn-back-to-top" type="button" aria-label="Back to top" title="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
 
   <script src="../assets/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/main.js"></script>

@@ -76,6 +76,7 @@
     initDashboardEngine();
     initAuthForms();
     initPasswordToggle();
+    initBackToTop();
   });
 
   // =========================================================================
@@ -759,6 +760,25 @@
         }
       });
     }
+
+    // Dashboard sidebar outside click handler
+    document.addEventListener('click', e => {
+      const sidebar = document.getElementById('dashboardSidebar');
+      const toggleBtn = e.target.closest('.dashboard-hamburger-btn') || e.target.closest('[onclick*="dashboardSidebar"]');
+      if (sidebar && sidebar.classList.contains('show') && !sidebar.contains(e.target) && !toggleBtn) {
+        sidebar.classList.remove('show');
+      }
+    });
+
+    // Close sidebar on ESC
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        const sidebar = document.getElementById('dashboardSidebar');
+        if (sidebar && sidebar.classList.contains('show')) {
+          sidebar.classList.remove('show');
+        }
+      }
+    });
   }
 
   // =========================================================================
@@ -825,6 +845,42 @@
           icon.className = isPassword ? 'bi bi-eye-slash fs-5 text-accent' : 'bi bi-eye fs-5';
         }
       }
+    });
+  }
+
+  // =========================================================================
+  // 14. BACK TO TOP BUTTON
+  // =========================================================================
+  function initBackToTop() {
+    const btn = document.getElementById('btn-back-to-top');
+    if (!btn) return;
+
+    const toggleBackToTop = () => {
+      const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      if (scrollPos > 240) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    };
+
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    toggleBackToTop();
+
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      document.documentElement.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      document.body.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   }
 

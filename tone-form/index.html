@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TONE / FORM — Your Shade. Your Match. Your Finish. | Premium Beauty-Tech</title>
-  <meta name="description" content="Discover your exact foundation and concealer match with TONE / FORM. Advanced undertone analysis, inclusive shade spectrum, and personalized kit builder.">
-  <meta name="keywords" content="foundation shade matcher, concealer shade matcher, foundation matching, undertone analyzer, beauty shade finder">
-  
+  <meta name="description"
+    content="Discover your exact foundation and concealer match with TONE / FORM. Advanced undertone analysis, inclusive shade spectrum, and personalized kit builder.">
+  <meta name="keywords"
+    content="foundation shade matcher, concealer shade matcher, foundation matching, undertone analyzer, beauty shade finder">
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-  
+
   <!-- CSS Dependencies -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
   <!-- =========================================================================
@@ -25,9 +29,9 @@
       <!-- Brand Logo -->
       <a class="navbar-brand navbar-brand-logo" href="index.html">
         <svg class="brand-logo-icon" width="26" height="26" viewBox="0 0 48 48" fill="none">
-          <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
-          <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
-          <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+          <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95" />
+          <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85" />
+          <circle cx="24" cy="24" r="4.5" fill="currentColor" />
         </svg>
         <span>TONE <span class="divider">/</span> FORM</span>
       </a>
@@ -37,7 +41,9 @@
         <button class="btn-theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
           <i class="bi bi-moon-stars"></i>
         </button>
-        <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#tfNavbarNav" aria-controls="tfNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse"
+          data-bs-target="#tfNavbarNav" aria-controls="tfNavbarNav" aria-expanded="false"
+          aria-label="Toggle navigation">
           <i class="bi bi-list fs-2 text-primary"></i>
         </button>
       </div>
@@ -48,19 +54,30 @@
           <li class="nav-item">
             <a class="nav-link tf-nav-link active" aria-current="page" href="index.html">Home</a>
           </li>
-          
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="about.html">About</a>
+          </li>
+
           <!-- Shop Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link tf-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="shopDropdown">
+            <a class="nav-link tf-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" id="shopDropdown">
               Shop
             </a>
             <ul class="dropdown-menu tf-dropdown-menu" aria-labelledby="shopDropdown">
-              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=foundation">Foundation <i class="bi bi-arrow-right-short text-muted"></i></a></li>
-              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=concealer">Concealer <i class="bi bi-arrow-right-short text-muted"></i></a></li>
-              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=sets">Foundation + Concealer Sets <i class="bi bi-arrow-right-short text-muted"></i></a></li>
-              <li><hr class="dropdown-divider my-1"></li>
-              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?filter=new">New Arrivals <span class="badge bg-secondary-subtle text-secondary font-tech">2026</span></a></li>
-              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?filter=bestsellers">Best Sellers <i class="bi bi-stars text-accent"></i></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=foundation">Foundation <i
+                    class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=concealer">Concealer <i
+                    class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?category=sets">Foundation + Concealer Sets
+                  <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+              <li>
+                <hr class="dropdown-divider my-1">
+              </li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?filter=new">New Arrivals <span
+                    class="badge bg-secondary-subtle text-secondary font-tech">2026</span></a></li>
+              <li><a class="dropdown-item tf-dropdown-item" href="shop.html?filter=bestsellers">Best Sellers <i
+                    class="bi bi-stars text-accent"></i></a></li>
             </ul>
           </li>
 
@@ -69,9 +86,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link tf-nav-link" href="kit-builder.html">Kit Builder</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link tf-nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link tf-nav-link" href="contact.html">Contact</a>
@@ -84,10 +98,11 @@
         <!-- Action Buttons -->
         <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
           <!-- Desktop Theme Toggle -->
-          <button class="btn-theme-toggle d-none d-xl-inline-flex" type="button" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <button class="btn-theme-toggle d-none d-xl-inline-flex" type="button" aria-label="Toggle light or dark theme"
+            title="Toggle theme">
             <i class="bi bi-moon-stars"></i>
           </button>
-          
+
           <a href="signup.html" class="btn-tf-outline btn-tf-sm">Sign Up</a>
           <a href="shade-match.html" class="btn-tf-accent btn-tf-sm">Find My Shade</a>
         </div>
@@ -107,14 +122,15 @@
             <span class="editorial-tag">Personalized Shade Intelligence</span>
             <h1 class="hero-headline editorial-title">Meet Your Match.</h1>
             <p class="hero-lead editorial-subtitle mb-4">
-              Find a foundation and concealer shade that feels made for you. Powered by smart undertone calibration, true-to-skin depth swatches, and seamless formula harmony.
+              Find a foundation and concealer shade that feels made for you. Powered by smart undertone calibration,
+              true-to-skin depth swatches, and seamless formula harmony.
             </p>
 
-            <div class="hero-cta-group d-flex flex-wrap align-items-center gap-3 mb-5">
-              <a href="shade-match.html" class="btn-tf-primary">
+            <div class="hero-cta-group d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-3 mb-5">
+              <a href="shade-match.html" class="btn-tf-primary w-100 w-sm-auto text-center justify-content-center">
                 Find My Shade <i class="bi bi-arrow-right"></i>
               </a>
-              <a href="shop.html?category=foundation" class="btn-tf-outline">
+              <a href="shop.html?category=foundation" class="btn-tf-outline w-100 w-sm-auto text-center justify-content-center">
                 Shop Foundation
               </a>
             </div>
@@ -123,15 +139,15 @@
             <div class="row g-3 pt-3 border-top border-tf">
               <div class="col-4">
                 <div class="font-tech fw-bold fs-5 text-primary">48</div>
-                <div class="text-muted-tf small">Inclusive Shades</div>
+                <div class="text-muted-tf small"> Shades</div>
               </div>
               <div class="col-4">
                 <div class="font-tech fw-bold fs-5 text-primary">3</div>
-                <div class="text-muted-tf small">Cali&shy;brated Finishes</div>
+                <div class="text-muted-tf small">Finishes</div>
               </div>
               <div class="col-4">
                 <div class="font-tech fw-bold fs-5 text-primary">100%</div>
-                <div class="text-muted-tf small">Formula Pairing</div>
+                <div class="text-muted-tf small">Pairing</div>
               </div>
             </div>
           </div>
@@ -140,8 +156,9 @@
         <!-- Hero Visual Composition with Floating UI Card -->
         <div class="col-lg-6">
           <div class="hero-visual-card">
-            <img src="assets/images/hero/hero-editorial.jpg" alt="Editorial model with glowing matched foundation bottle and concealer" class="img-fluid">
-            
+            <img src="assets/images/hero/hero-editorial.jpg"
+              alt="Editorial model with glowing matched foundation bottle and concealer" class="img-fluid">
+
             <!-- Floating Match UI Card -->
             <div class="floating-match-card">
               <div class="d-flex align-items-center justify-content-between mb-2">
@@ -150,7 +167,7 @@
                   <i class="bi bi-shield-check"></i> High Confidence
                 </span>
               </div>
-              
+
               <div class="row g-2 align-items-center">
                 <div class="col-6 border-end border-tf pe-3">
                   <div class="text-muted-tf small">Foundation</div>
@@ -186,7 +203,8 @@
           <span class="editorial-tag">Smart Complexion Discovery</span>
           <h2 class="editorial-title">Stop Guessing Your Shade.</h2>
           <p class="editorial-subtitle mx-auto">
-            Traditional shade selecting is based on guesswork. TONE / FORM pairs skin depth, undertone equilibrium, and desired coverage into an accurate, customized pairing.
+            Traditional shade selecting is based on guesswork. TONE / FORM pairs skin depth, undertone equilibrium, and
+            desired coverage into an accurate, customized pairing.
           </p>
         </div>
       </div>
@@ -197,28 +215,32 @@
           <div class="card h-100 p-4 border-tf bg-card rounded-4">
             <div class="font-tech text-accent fs-3 fw-bold mb-2">01</div>
             <h5 class="mb-2">Analyze Undertone</h5>
-            <p class="text-muted-tf small mb-0">Identify your warm, neutral, cool, or olive undertone through optical visual markers.</p>
+            <p class="text-muted-tf small mb-0">Identify your warm, neutral, cool, or olive undertone through optical
+              visual markers.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 p-4 border-tf bg-card rounded-4">
             <div class="font-tech text-accent fs-3 fw-bold mb-2">02</div>
             <h5 class="mb-2">Choose Skin Depth</h5>
-            <p class="text-muted-tf small mb-0">Select from 7 calibrated depth spectrums spanning Very Fair to Rich Deep.</p>
+            <p class="text-muted-tf small mb-0">Select from 7 calibrated depth spectrums spanning Very Fair to Rich
+              Deep.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 p-4 border-tf bg-card rounded-4">
             <div class="font-tech text-accent fs-3 fw-bold mb-2">03</div>
             <h5 class="mb-2">Compare Options</h5>
-            <p class="text-muted-tf small mb-0">Explore finish preferences from Natural Dewy to Luminous Velvet Demi-Matte.</p>
+            <p class="text-muted-tf small mb-0">Explore finish preferences from Natural Dewy to Luminous Velvet
+              Demi-Matte.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 p-4 border-tf bg-card rounded-4">
             <div class="font-tech text-accent fs-3 fw-bold mb-2">04</div>
             <h5 class="mb-2">Receive Match</h5>
-            <p class="text-muted-tf small mb-0">Get your harmonious foundation and brightening concealer recommendation.</p>
+            <p class="text-muted-tf small mb-0">Get your harmonious foundation and brightening concealer recommendation.
+            </p>
           </div>
         </div>
       </div>
@@ -241,7 +263,8 @@
           <span class="editorial-tag">Undertone Science</span>
           <h2 class="editorial-title">Decoding Your Sub-Surface Tone</h2>
           <p class="editorial-subtitle mb-0">
-            Use these visual cues as a beauty-matching guide. Real skin reflects rich undertone complexities that define how makeup looks in direct light.
+            Use these visual cues as a beauty-matching guide. Real skin reflects rich undertone complexities that define
+            how makeup looks in direct light.
           </p>
         </div>
         <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
@@ -256,12 +279,14 @@
         <div class="col-md-4">
           <div class="card h-100 border-tf bg-surface p-4 rounded-4">
             <div class="d-flex align-items-center justify-content-between mb-3">
-              <span class="badge font-tech px-3 py-2 rounded-pill" style="background: rgba(200,125,111,0.15); color: var(--tf-accent);">COOL SPECTRUM</span>
+              <span class="badge font-tech px-3 py-2 rounded-pill"
+                style="background: rgba(200,125,111,0.15); color: var(--tf-accent);">COOL SPECTRUM</span>
               <span class="swatch-chip" style="background-color: #E8BFB8;"></span>
             </div>
             <h4 class="mb-2">Cool Undertones</h4>
             <p class="text-muted-tf small mb-3">
-              Characterized by warm pink, rose, ruby, or subtle blue undertones. Veins appear predominantly blue/purple; silver jewelry naturally flatters the skin.
+              Characterized by warm pink, rose, ruby, or subtle blue undertones. Veins appear predominantly blue/purple;
+              silver jewelry naturally flatters the skin.
             </p>
             <div class="border-top border-tf pt-3 mt-auto small">
               <span class="fw-bold font-tech text-primary">Best Codes:</span>
@@ -274,12 +299,14 @@
         <div class="col-md-4">
           <div class="card h-100 border-tf bg-surface p-4 rounded-4">
             <div class="d-flex align-items-center justify-content-between mb-3">
-              <span class="badge font-tech px-3 py-2 rounded-pill" style="background: rgba(125,117,105,0.15); color: var(--tf-secondary);">NEUTRAL SPECTRUM</span>
+              <span class="badge font-tech px-3 py-2 rounded-pill"
+                style="background: rgba(125,117,105,0.15); color: var(--tf-secondary);">NEUTRAL SPECTRUM</span>
               <span class="swatch-chip" style="background-color: #D3BCAC;"></span>
             </div>
             <h4 class="mb-2">Neutral Undertones</h4>
             <p class="text-muted-tf small mb-3">
-              An even balance of golden and rosy pigments. Veins appear blue-green; both gold and silver jewelry look complementary and natural on the complexion.
+              An even balance of golden and rosy pigments. Veins appear blue-green; both gold and silver jewelry look
+              complementary and natural on the complexion.
             </p>
             <div class="border-top border-tf pt-3 mt-auto small">
               <span class="fw-bold font-tech text-primary">Best Codes:</span>
@@ -292,12 +319,14 @@
         <div class="col-md-4">
           <div class="card h-100 border-tf bg-surface p-4 rounded-4">
             <div class="d-flex align-items-center justify-content-between mb-3">
-              <span class="badge font-tech px-3 py-2 rounded-pill" style="background: rgba(184,130,42,0.15); color: #B8822A;">WARM SPECTRUM</span>
+              <span class="badge font-tech px-3 py-2 rounded-pill"
+                style="background: rgba(184,130,42,0.15); color: #B8822A;">WARM SPECTRUM</span>
               <span class="swatch-chip" style="background-color: #CFA37E;"></span>
             </div>
             <h4 class="mb-2">Warm Undertones</h4>
             <p class="text-muted-tf small mb-3">
-              Characterized by golden, honey, yellow, peach, or warm olive notes. Veins appear olive/green; gold jewelry radiates effortlessly against the skin.
+              Characterized by golden, honey, yellow, peach, or warm olive notes. Veins appear olive/green; gold jewelry
+              radiates effortlessly against the skin.
             </p>
             <div class="border-top border-tf pt-3 mt-auto small">
               <span class="fw-bold font-tech text-primary">Best Codes:</span>
@@ -309,7 +338,8 @@
 
       <div class="mt-4 p-3 bg-card border border-tf rounded-3 text-center">
         <p class="small text-muted-tf mb-0">
-          <i class="bi bi-info-circle me-1"></i> Visual guidance note: Undertone suggestions are approximate beauty-matching recommendations for cosmetic selection, not medical or dermatological diagnostics.
+          <i class="bi bi-info-circle me-1"></i> Visual guidance note: Undertone suggestions are approximate
+          beauty-matching recommendations for cosmetic selection, not medical or dermatological diagnostics.
         </p>
       </div>
     </div>
@@ -325,7 +355,8 @@
           <span class="editorial-tag">Core Formulations</span>
           <h2 class="editorial-title">Designed for Harmony</h2>
           <p class="editorial-subtitle mb-0">
-            Engineered with micro-spherical pigments that marry foundation fluid with precision concealer, preventing demarcation lines and flashback.
+            Engineered with micro-spherical pigments that marry foundation fluid with precision concealer, preventing
+            demarcation lines and flashback.
           </p>
         </div>
         <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
@@ -342,7 +373,8 @@
             <div class="row g-0 h-100">
               <div class="col-md-6 product-card-img-wrap">
                 <span class="product-card-badge">Foundation</span>
-                <img src="assets/images/foundation/foundation-bottle.jpg" alt="TONE / FORM Tone Balance Fluid Foundation bottle on stone pedestal">
+                <img src="assets/images/foundation/foundation-bottle.jpg"
+                  alt="TONE / FORM Tone Balance Fluid Foundation bottle on stone pedestal">
               </div>
               <div class="col-md-6 product-card-body justify-content-between">
                 <div>
@@ -351,21 +383,28 @@
                   </div>
                   <h3 class="product-card-title">Tone Balance Fluid Foundation</h3>
                   <p class="text-muted-tf small mb-3">
-                    A weightless, breathable fluid formula infused with hydrating squalane. Seamless coverage that mimics genuine skin texture.
+                    A weightless, breathable fluid formula infused with hydrating squalane. Seamless coverage that
+                    mimics genuine skin texture.
                   </p>
-                  
+
                   <!-- Interactive Shade Swatches -->
                   <div class="mb-3">
                     <div class="small fw-bold text-primary mb-1">
                       Shade: <span class="selected-shade-name font-tech text-accent">M420 Warm Sand</span>
                     </div>
                     <div class="swatch-group">
-                      <button class="swatch-chip active" style="background-color: #F6E4D6;" data-shade-code="F120" data-shade-name="F120 Neutral Ivory" aria-label="Shade F120 Neutral Ivory"></button>
-                      <button class="swatch-chip" style="background-color: #ECCBB2;" data-shade-code="F220" data-shade-name="F220 Neutral Bisque" aria-label="Shade F220 Neutral Bisque"></button>
-                      <button class="swatch-chip" style="background-color: #DEB393;" data-shade-code="L320" data-shade-name="L320 Warm Sand" aria-label="Shade L320 Warm Sand"></button>
-                      <button class="swatch-chip" style="background-color: #C69472;" data-shade-code="M420" data-shade-name="M420 Warm Neutral 320" aria-label="Shade M420 Warm Neutral 320"></button>
-                      <button class="swatch-chip" style="background-color: #A7704C;" data-shade-code="T520" data-shade-name="T520 Neutral Toffee" aria-label="Shade T520 Neutral Toffee"></button>
-                      <button class="swatch-chip" style="background-color: #7D4C30;" data-shade-code="D620" data-shade-name="D620 Neutral Cacao" aria-label="Shade D620 Neutral Cacao"></button>
+                      <button class="swatch-chip active" style="background-color: #F6E4D6;" data-shade-code="F120"
+                        data-shade-name="F120 Neutral Ivory" aria-label="Shade F120 Neutral Ivory"></button>
+                      <button class="swatch-chip" style="background-color: #ECCBB2;" data-shade-code="F220"
+                        data-shade-name="F220 Neutral Bisque" aria-label="Shade F220 Neutral Bisque"></button>
+                      <button class="swatch-chip" style="background-color: #DEB393;" data-shade-code="L320"
+                        data-shade-name="L320 Warm Sand" aria-label="Shade L320 Warm Sand"></button>
+                      <button class="swatch-chip" style="background-color: #C69472;" data-shade-code="M420"
+                        data-shade-name="M420 Warm Neutral 320" aria-label="Shade M420 Warm Neutral 320"></button>
+                      <button class="swatch-chip" style="background-color: #A7704C;" data-shade-code="T520"
+                        data-shade-name="T520 Neutral Toffee" aria-label="Shade T520 Neutral Toffee"></button>
+                      <button class="swatch-chip" style="background-color: #7D4C30;" data-shade-code="D620"
+                        data-shade-name="D620 Neutral Cacao" aria-label="Shade D620 Neutral Cacao"></button>
                     </div>
                   </div>
                 </div>
@@ -385,7 +424,8 @@
             <div class="row g-0 h-100">
               <div class="col-md-6 product-card-img-wrap">
                 <span class="product-card-badge">Concealer</span>
-                <img src="assets/images/concealer/concealer-tube.jpg" alt="TONE / FORM Radiant Precision Concealer tube with wand applicator">
+                <img src="assets/images/concealer/concealer-tube.jpg"
+                  alt="TONE / FORM Radiant Precision Concealer tube with wand applicator">
               </div>
               <div class="col-md-6 product-card-body justify-content-between">
                 <div>
@@ -394,21 +434,28 @@
                   </div>
                   <h3 class="product-card-title">Radiant Precision Concealer</h3>
                   <p class="text-muted-tf small mb-3">
-                    Crease-resistant undereye and spot coverage with a flexible precision wand applicator. Formulated to melt into foundation.
+                    Crease-resistant undereye and spot coverage with a flexible precision wand applicator. Formulated to
+                    melt into foundation.
                   </p>
-                  
+
                   <!-- Interactive Shade Swatches -->
                   <div class="mb-3">
                     <div class="small fw-bold text-primary mb-1">
                       Shade: <span class="selected-shade-name font-tech text-accent">C28 Soft Sand</span>
                     </div>
                     <div class="swatch-group">
-                      <button class="swatch-chip" style="background-color: #F8E8DD;" data-shade-code="C10" data-shade-name="C10 Porcelain" aria-label="Shade C10 Porcelain"></button>
-                      <button class="swatch-chip" style="background-color: #EFD4C0;" data-shade-code="C18" data-shade-name="C18 Light Shell" aria-label="Shade C18 Light Shell"></button>
-                      <button class="swatch-chip active" style="background-color: #E2BFA6;" data-shade-code="C28" data-shade-name="C28 Soft Sand" aria-label="Shade C28 Soft Sand"></button>
-                      <button class="swatch-chip" style="background-color: #CDA081;" data-shade-code="C36" data-shade-name="C36 Honey Sand" aria-label="Shade C36 Honey Sand"></button>
-                      <button class="swatch-chip" style="background-color: #AF7D59;" data-shade-code="C48" data-shade-name="C48 Warm Almond" aria-label="Shade C48 Warm Almond"></button>
-                      <button class="swatch-chip" style="background-color: #845337;" data-shade-code="C62" data-shade-name="C62 Rich Mocha" aria-label="Shade C62 Rich Mocha"></button>
+                      <button class="swatch-chip" style="background-color: #F8E8DD;" data-shade-code="C10"
+                        data-shade-name="C10 Porcelain" aria-label="Shade C10 Porcelain"></button>
+                      <button class="swatch-chip" style="background-color: #EFD4C0;" data-shade-code="C18"
+                        data-shade-name="C18 Light Shell" aria-label="Shade C18 Light Shell"></button>
+                      <button class="swatch-chip active" style="background-color: #E2BFA6;" data-shade-code="C28"
+                        data-shade-name="C28 Soft Sand" aria-label="Shade C28 Soft Sand"></button>
+                      <button class="swatch-chip" style="background-color: #CDA081;" data-shade-code="C36"
+                        data-shade-name="C36 Honey Sand" aria-label="Shade C36 Honey Sand"></button>
+                      <button class="swatch-chip" style="background-color: #AF7D59;" data-shade-code="C48"
+                        data-shade-name="C48 Warm Almond" aria-label="Shade C48 Warm Almond"></button>
+                      <button class="swatch-chip" style="background-color: #845337;" data-shade-code="C62"
+                        data-shade-name="C62 Rich Mocha" aria-label="Shade C62 Rich Mocha"></button>
                     </div>
                   </div>
                 </div>
@@ -433,7 +480,8 @@
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
           <div class="position-relative rounded-4 overflow-hidden shadow-lg border border-tf">
-            <img src="assets/images/foundation/kit-flatlay.jpg" alt="TONE / FORM custom base kit flatlay with foundation, concealer, powder, and brush" class="img-fluid">
+            <img src="assets/images/foundation/kit-flatlay.jpg"
+              alt="TONE / FORM custom base kit flatlay with foundation, concealer, powder, and brush" class="img-fluid">
           </div>
         </div>
 
@@ -442,7 +490,8 @@
             <span class="editorial-tag">Personalized Base System</span>
             <h2 class="editorial-title">Build Your Base.</h2>
             <p class="editorial-subtitle mb-4">
-              Bundle your calibrated foundation and concealer pairing with our setting essentials. Experience flawless skin cohesion at an integrated bundle price.
+              Bundle your calibrated foundation and concealer pairing with our setting essentials. Experience flawless
+              skin cohesion at an integrated bundle price.
             </p>
 
             <!-- Kit Summary Box Demo -->
@@ -498,7 +547,8 @@
           <span class="editorial-tag">Real Complexion Results</span>
           <h2 class="editorial-title">Seen on Real Skin</h2>
           <p class="editorial-subtitle mb-0">
-            Real customer portraits showing real matches across diverse skin tones and textures. (Fictional customer profiles for demonstration).
+            Real customer portraits showing real matches across diverse skin tones and textures. (Fictional customer
+            profiles for demonstration).
           </p>
         </div>
         <div class="col-lg-5 text-lg-end mt-3 mt-lg-0">
@@ -514,21 +564,27 @@
         <div class="col-md-6 col-lg-3">
           <div class="review-card">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <img src="assets/images/reviews/review-fair.jpg" alt="Reviewer Elena M. wearing shade F220" class="review-customer-img">
+              <img src="assets/images/reviews/review-fair.jpg" alt="Reviewer Elena M. wearing shade F220"
+                class="review-customer-img">
               <div>
                 <h6 class="mb-0">Elena M.</h6>
                 <div class="star-rating my-1">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
-                <span class="badge font-tech" style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Demo Verified</span>
+                <span class="badge font-tech"
+                  style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Demo
+                  Verified</span>
               </div>
             </div>
             <div class="mb-3">
-              <span class="review-shade-tag mb-1"><span class="swatch-chip" style="background-color: #ECCBB2; width: 10px; height: 10px;"></span> F220 Neutral</span>
+              <span class="review-shade-tag mb-1"><span class="swatch-chip"
+                  style="background-color: #ECCBB2; width: 10px; height: 10px;"></span> F220 Neutral</span>
               <span class="review-shade-tag mb-1">Concealer: C18</span>
             </div>
             <p class="text-muted-tf small mb-0 flex-grow-1">
-              "Natural finish and surprisingly easy to blend. It leaves my skin looking like skin, just noticeably more even."
+              "Natural finish and surprisingly easy to blend. It leaves my skin looking like skin, just noticeably more
+              even."
             </p>
           </div>
         </div>
@@ -537,21 +593,27 @@
         <div class="col-md-6 col-lg-3">
           <div class="review-card">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <img src="assets/images/reviews/review-medium.jpg" alt="Reviewer Sarah L. wearing shade M420" class="review-customer-img">
+              <img src="assets/images/reviews/review-medium.jpg" alt="Reviewer Sarah L. wearing shade M420"
+                class="review-customer-img">
               <div>
                 <h6 class="mb-0">Sarah L.</h6>
                 <div class="star-rating my-1">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
-                <span class="badge font-tech" style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Demo Verified</span>
+                <span class="badge font-tech"
+                  style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Demo
+                  Verified</span>
               </div>
             </div>
             <div class="mb-3">
-              <span class="review-shade-tag mb-1"><span class="swatch-chip" style="background-color: #C69472; width: 10px; height: 10px;"></span> M420 Warm</span>
+              <span class="review-shade-tag mb-1"><span class="swatch-chip"
+                  style="background-color: #C69472; width: 10px; height: 10px;"></span> M420 Warm</span>
               <span class="review-shade-tag mb-1">Concealer: C36</span>
             </div>
             <p class="text-muted-tf small mb-0 flex-grow-1">
-              "The undertone recommendation was spot on. Warm tones usually turn orange on me, but this holds true golden balance all day."
+              "The undertone recommendation was spot on. Warm tones usually turn orange on me, but this holds true
+              golden balance all day."
             </p>
           </div>
         </div>
@@ -560,21 +622,27 @@
         <div class="col-md-6 col-lg-3">
           <div class="review-card">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <img src="assets/images/reviews/review-tan.jpg" alt="Reviewer Priya K. wearing shade T520" class="review-customer-img">
+              <img src="assets/images/reviews/review-tan.jpg" alt="Reviewer Priya K. wearing shade T520"
+                class="review-customer-img">
               <div>
                 <h6 class="mb-0">Priya K.</h6>
                 <div class="star-rating my-1">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
-                <span class="badge font-tech" style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Demo Verified</span>
+                <span class="badge font-tech"
+                  style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Demo
+                  Verified</span>
               </div>
             </div>
             <div class="mb-3">
-              <span class="review-shade-tag mb-1"><span class="swatch-chip" style="background-color: #A7704C; width: 10px; height: 10px;"></span> T520 Neutral</span>
+              <span class="review-shade-tag mb-1"><span class="swatch-chip"
+                  style="background-color: #A7704C; width: 10px; height: 10px;"></span> T520 Neutral</span>
               <span class="review-shade-tag mb-1">Concealer: C48</span>
             </div>
             <p class="text-muted-tf small mb-0 flex-grow-1">
-              "Finally a foundation and concealer pair that doesn't crease under the eyes or settle into fine smile lines."
+              "Finally a foundation and concealer pair that doesn't crease under the eyes or settle into fine smile
+              lines."
             </p>
           </div>
         </div>
@@ -583,21 +651,27 @@
         <div class="col-md-6 col-lg-3">
           <div class="review-card">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <img src="assets/images/reviews/review-deep.jpg" alt="Reviewer Amara D. wearing shade D620" class="review-customer-img">
+              <img src="assets/images/reviews/review-deep.jpg" alt="Reviewer Amara D. wearing shade D620"
+                class="review-customer-img">
               <div>
                 <h6 class="mb-0">Amara D.</h6>
                 <div class="star-rating my-1">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
-                <span class="badge font-tech" style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Demo Verified</span>
+                <span class="badge font-tech"
+                  style="font-size: 0.65rem; background: var(--tf-surface); color: var(--tf-text-muted);">Demo
+                  Verified</span>
               </div>
             </div>
             <div class="mb-3">
-              <span class="review-shade-tag mb-1"><span class="swatch-chip" style="background-color: #7D4C30; width: 10px; height: 10px;"></span> D620 Cacao</span>
+              <span class="review-shade-tag mb-1"><span class="swatch-chip"
+                  style="background-color: #7D4C30; width: 10px; height: 10px;"></span> D620 Cacao</span>
               <span class="review-shade-tag mb-1">Concealer: C62</span>
             </div>
             <p class="text-muted-tf small mb-0 flex-grow-1">
-              "Zero ashy cast in flash photos. The rich red-neutral undertone is formulated with obvious respect for deep skin depths."
+              "Zero ashy cast in flash photos. The rich red-neutral undertone is formulated with obvious respect for
+              deep skin depths."
             </p>
           </div>
         </div>
@@ -613,7 +687,8 @@
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
           <div class="rounded-4 overflow-hidden shadow-lg border border-tf">
-            <img src="assets/images/editorial/texture-macro.jpg" alt="Macro photography of inclusive foundation shade swatches on stone" class="img-fluid">
+            <img src="assets/images/editorial/texture-macro.jpg"
+              alt="Macro photography of inclusive foundation shade swatches on stone" class="img-fluid">
           </div>
         </div>
         <div class="col-lg-6">
@@ -624,13 +699,15 @@
               "Makeup shouldn’t mask your identity. It should articulate your natural tone with effortless precision."
             </blockquote>
             <p class="text-muted-tf mb-4">
-              We developed TONE / FORM around a single premise: complexion products are only as good as their match accuracy. By pairing optical color theory with modern skin-mimicking polymers, we ensure your foundation and concealer reflect your skin’s authentic radiance under every light.
+              We developed TONE / FORM around a single premise: complexion products are only as good as their match
+              accuracy. By pairing optical color theory with modern skin-mimicking polymers, we ensure your foundation
+              and concealer reflect your skin’s authentic radiance under every light.
             </p>
-            <div class="d-flex gap-3">
-              <a href="about.html" class="btn-tf-outline">
+            <div class="d-flex flex-column flex-sm-row gap-3">
+              <a href="about.html" class="btn-tf-outline w-100 w-sm-auto text-center">
                 Read Our Story
               </a>
-              <a href="undertone-analyzer.html" class="btn-tf-primary">
+              <a href="undertone-analyzer.html" class="btn-tf-primary w-100 w-sm-auto text-center">
                 Explore Undertone Guide
               </a>
             </div>
@@ -652,11 +729,11 @@
           <p class="editorial-subtitle mx-auto mb-4">
             Take 2 minutes to discover your tailored shade combination with our intelligent shade matcher.
           </p>
-          <div class="d-flex justify-content-center gap-3">
-            <a href="shade-match.html" class="btn-tf-primary">
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 align-items-stretch align-items-sm-center">
+            <a href="shade-match.html" class="btn-tf-primary w-100 w-sm-auto text-center">
               Start Shade Match <i class="bi bi-arrow-right"></i>
             </a>
-            <a href="kit-builder.html" class="btn-tf-outline">
+            <a href="kit-builder.html" class="btn-tf-outline w-100 w-sm-auto text-center">
               Build Custom Kit
             </a>
           </div>
@@ -674,11 +751,12 @@
         <!-- Column 1: Brand & Social -->
         <div class="col-lg-4 col-md-6">
           <div class="d-flex align-items-center mb-2">
-            <a class="navbar-brand navbar-brand-logo d-inline-flex align-items-center gap-2 text-nowrap" href="index.html">
+            <a class="navbar-brand navbar-brand-logo d-inline-flex align-items-center gap-2 text-nowrap"
+              href="index.html">
               <svg class="brand-logo-icon" width="26" height="26" viewBox="0 0 48 48" fill="none">
-                <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
-                <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
-                <circle cx="24" cy="24" r="4.5" fill="currentColor"/>
+                <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95" />
+                <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85" />
+                <circle cx="24" cy="24" r="4.5" fill="currentColor" />
               </svg>
               <span>TONE <span class="divider">/</span> FORM</span>
             </a>
@@ -689,15 +767,19 @@
 
           <!-- Social Icons in Footer -->
           <div class="footer-social-links">
-            <a href="#" class="btn-social-icon" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="Instagram" title="Instagram"><i
+                class="bi bi-instagram"></i></a>
             <a href="#" class="btn-social-icon" aria-label="TikTok" title="TikTok"><i class="bi bi-tiktok"></i></a>
             <a href="#" class="btn-social-icon" aria-label="YouTube" title="YouTube"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="btn-social-icon" aria-label="Pinterest" title="Pinterest"><i class="bi bi-pinterest"></i></a>
-            <a href="#" class="btn-social-icon" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="Pinterest" title="Pinterest"><i
+                class="bi bi-pinterest"></i></a>
+            <a href="#" class="btn-social-icon" aria-label="Facebook" title="Facebook"><i
+                class="bi bi-facebook"></i></a>
           </div>
 
           <p class="small text-muted-tf mt-3">
-            Fictional demo brand exploring the convergence of luxury cosmetics, undertone technology, and personalized complexion design.
+            Fictional demo brand exploring the convergence of luxury cosmetics, undertone technology, and personalized
+            complexion design.
           </p>
         </div>
 
@@ -730,7 +812,8 @@
             <li><a href="login.html">Customer Login</a></li>
             <li><a href="signup.html">Create Account</a></li>
             <li><a href="dashboard.html"><i class="bi bi-shield-lock me-1 text-accent"></i> Inventory Dashboard</a></li>
-            <li><a href="documentation/index.html"><i class="bi bi-file-earmark-code me-1"></i> Template Documentation</a></li>
+            <li><a href="documentation/index.html"><i class="bi bi-file-earmark-code me-1"></i> Template
+                Documentation</a></li>
           </ul>
         </div>
       </div>
@@ -750,9 +833,15 @@
     </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <button id="btn-back-to-top" class="btn-back-to-top" type="button" aria-label="Back to top" title="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
   <!-- JS Dependencies -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/gsap.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

@@ -43,6 +43,9 @@
           <li class="nav-item">
             <a class="nav-link tf-nav-link" href="index.html">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link tf-nav-link" href="about.html">About</a>
+          </li>
           
           <!-- Shop Dropdown -->
           <li class="nav-item dropdown">
@@ -64,9 +67,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link tf-nav-link active" href="kit-builder.html">Kit Builder</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link tf-nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link tf-nav-link" href="contact.html">Contact</a>
@@ -201,8 +201,8 @@
               </div>
             </div>
 
-            <div class="d-flex justify-content-end mt-4">
-              <button class="btn-tf-primary btn-kit-step-nav" data-target-step="2">
+            <div class="d-flex flex-column flex-sm-row justify-content-end mt-4">
+              <button class="btn-tf-primary btn-kit-step-nav w-100 w-sm-auto text-center" data-target-step="2">
                 Continue to Concealer <i class="bi bi-chevron-right ms-1"></i>
               </button>
             </div>
@@ -274,11 +274,11 @@
               </div>
             </div>
 
-            <div class="d-flex justify-content-between mt-4">
-              <button class="btn-tf-outline btn-kit-step-nav" data-target-step="1">
+            <div class="d-flex flex-column flex-sm-row justify-content-between gap-3 mt-4">
+              <button class="btn-tf-outline btn-kit-step-nav w-100 w-sm-auto text-center" data-target-step="1">
                 <i class="bi bi-chevron-left me-1"></i> Back
               </button>
-              <button class="btn-tf-primary btn-kit-step-nav" data-target-step="3">
+              <button class="btn-tf-primary btn-kit-step-nav w-100 w-sm-auto text-center" data-target-step="3">
                 Continue to Add-On <i class="bi bi-chevron-right ms-1"></i>
               </button>
             </div>
@@ -329,17 +329,17 @@
               </div>
             </div>
 
-            <div class="mt-3 text-end">
-              <button class="btn-tf-outline btn-tf-sm" id="btn-remove-addon">
+            <div class="mt-3 text-sm-end text-center">
+              <button class="btn-tf-outline btn-tf-sm w-100 w-sm-auto" id="btn-remove-addon">
                 <i class="bi bi-x-circle me-1"></i> Remove Add-On (No Tool)
               </button>
             </div>
 
-            <div class="d-flex justify-content-between mt-4">
-              <button class="btn-tf-outline btn-kit-step-nav" data-target-step="2">
+            <div class="d-flex flex-column flex-sm-row justify-content-between gap-3 mt-4">
+              <button class="btn-tf-outline btn-kit-step-nav w-100 w-sm-auto text-center" data-target-step="2">
                 <i class="bi bi-chevron-left me-1"></i> Back
               </button>
-              <button class="btn-tf-primary btn-kit-step-nav" data-target-step="4">
+              <button class="btn-tf-primary btn-kit-step-nav w-100 w-sm-auto text-center" data-target-step="4">
                 Review Kit <i class="bi bi-chevron-right ms-1"></i>
               </button>
             </div>
@@ -380,11 +380,11 @@
               </div>
             </div>
 
-            <div class="d-flex justify-content-between align-items-center">
-              <button class="btn-tf-outline btn-kit-step-nav" data-target-step="3">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-sm-center gap-3">
+              <button class="btn-tf-outline btn-kit-step-nav w-100 w-sm-auto text-center" data-target-step="3">
                 <i class="bi bi-chevron-left me-1"></i> Edit Add-On
               </button>
-              <button class="btn-tf-accent py-3 px-4 fs-6" id="btn-save-kit-demo">
+              <button class="btn-tf-accent py-3 px-4 fs-6 w-100 w-sm-auto text-center" id="btn-save-kit-demo">
                 <i class="bi bi-check2-circle me-1"></i> Build My Kit — Save Demo
               </button>
             </div>
@@ -559,6 +559,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button id="btn-back-to-top" class="btn-back-to-top" type="button" aria-label="Back to top" title="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/gsap.min.js"></script>

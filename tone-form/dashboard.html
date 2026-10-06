@@ -94,7 +94,6 @@
         <div class="col-lg-7">
           <div class="d-flex align-items-center gap-2 mb-2">
             <span class="editorial-tag mb-0">INTERNAL OPERATIONS</span>
-            <span class="badge bg-card font-tech text-accent border border-tf">Inventory Dashboard</span>
           </div>
           <h1 class="editorial-title mb-2">Inventory Management & Stock Matrix</h1>
           <p class="editorial-subtitle mb-0">
@@ -102,11 +101,11 @@
             distributions.
           </p>
         </div>
-        <div class="col-lg-5 text-lg-end mt-4 mt-lg-0 d-flex flex-wrap gap-2 justify-content-lg-end">
-          <a href="dashboard/index.html" class="btn-tf-outline btn-tf-sm">
+        <div class="col-lg-5 text-lg-end mt-4 mt-lg-0 d-flex flex-column flex-sm-row gap-2 justify-content-lg-end align-items-stretch align-items-sm-center">
+          <a href="dashboard/index.html" class="btn-tf-outline btn-tf-sm text-center">
             <i class="bi bi-layout-sidebar me-1"></i> Full Ops Desk View
           </a>
-          <button class="btn-tf-primary btn-tf-sm" data-bs-toggle="modal" data-bs-target="#updateStockModal">
+          <button class="btn-tf-primary btn-tf-sm text-center" data-bs-toggle="modal" data-bs-target="#updateStockModal">
             <i class="bi bi-plus-lg me-1"></i> Adjust Stock Intake
           </button>
         </div>
@@ -213,8 +212,8 @@
         <div class="row g-3 align-items-center">
           <div class="col-md-4">
             <div class="input-group">
-              <span class="input-group-text bg-card border-tf text-muted-tf"><i class="bi bi-search"></i></span>
-              <input type="text" class="form-control-tf border-start-0" id="inv-search-input"
+              <span class="input-group-text"><i class="bi bi-search"></i></span>
+              <input type="text" class="form-control-tf" id="inv-search-input"
                 placeholder="Search by shade code or name...">
             </div>
           </div>
@@ -245,6 +244,11 @@
 
       <!-- Master Inventory Table -->
       <div class="card border-tf bg-surface rounded-4 overflow-hidden shadow-sm mb-5">
+        <!-- Mobile Horizontal Scroll Indicator -->
+        <div class="d-md-none px-3 py-2 border-bottom border-tf bg-surface d-flex align-items-center justify-content-between font-tech text-muted-tf" style="font-size: 0.74rem;">
+          <span class="d-inline-flex align-items-center gap-1"><i class="bi bi-arrow-left-right text-accent"></i> Scroll sideways to view all columns</span>
+          <span class="badge bg-card text-muted-tf border border-tf font-tech">8 Columns</span>
+        </div>
         <div class="table-responsive">
           <table class="table table-tf mb-0">
             <thead>
@@ -574,6 +578,11 @@
             style="font-size: 0.5rem;"></i> Active Ops</span></div>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button id="btn-back-to-top" class="btn-back-to-top" type="button" aria-label="Back to top" title="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
 
   <!-- JS Dependencies -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>

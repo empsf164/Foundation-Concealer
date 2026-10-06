@@ -17,7 +17,7 @@
     <!-- Sidebar -->
     <aside class="dashboard-sidebar" id="dashboardSidebar">
       <div class="p-3 border-bottom border-tf d-flex align-items-center justify-content-between">
-                <a class="navbar-brand-logo fs-6 text-primary" href="../index.html">
+        <a class="navbar-brand-logo fs-6 text-primary" href="../index.html">
           <svg class="brand-logo-icon" width="22" height="22" viewBox="0 0 48 48" fill="none">
             <circle cx="20" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.95"/>
             <circle cx="28" cy="24" r="14" stroke="currentColor" stroke-width="2.8" opacity="0.85"/>
@@ -25,7 +25,6 @@
           </svg>
           <span>TONE <span class="divider">/</span> FORM</span>
         </a>
-        <span class="badge bg-surface font-tech text-accent" style="font-size: 0.65rem;">OPS DESK</span>
       </div>
 
       <nav class="py-3 flex-grow-1 overflow-y-auto">
@@ -69,7 +68,7 @@
       
       <header class="dashboard-topbar">
         <div class="d-flex align-items-center gap-3">
-          <button class="btn btn-outline-secondary border-0 p-1 d-lg-none" type="button" onclick="document.getElementById('dashboardSidebar').classList.toggle('show')">
+          <button class="btn btn-outline-secondary border-0 p-1 dashboard-hamburger-btn d-xl-none" type="button" onclick="document.getElementById('dashboardSidebar').classList.toggle('show')">
             <i class="bi bi-list fs-3 text-primary"></i>
           </button>
           <div class="font-tech fw-bold text-primary d-none d-sm-block">Stock Management & Units Matrix</div>
@@ -115,17 +114,17 @@
 
       <main class="p-4 p-md-5">
         
-        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 pb-2 border-bottom border-tf">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 pb-2 border-bottom border-tf gap-3">
           <div>
             <span class="editorial-tag mb-1">REAL-TIME INVENTORY LEDGER</span>
             <h1 class="display-font fs-2 mb-1">Shade Stock Ledger</h1>
             <p class="text-muted-tf small mb-0">Track exact bottle count, safety thresholds, and replenishment schedules.</p>
           </div>
-          <div class="mt-3 mt-md-0 d-flex gap-2">
-            <button class="btn-tf-outline btn-tf-sm" onclick="alert('Exporting CSV sheet... (Demo action)')">
+          <div class="mt-3 mt-md-0 d-flex flex-column flex-sm-row gap-2 align-items-stretch align-items-sm-center">
+            <button class="btn-tf-outline btn-tf-sm text-center" onclick="alert('Exporting CSV sheet... (Demo action)')">
               <i class="bi bi-download me-1"></i> Export CSV
             </button>
-            <button class="btn-tf-primary btn-tf-sm" data-bs-toggle="modal" data-bs-target="#updateStockModal">
+            <button class="btn-tf-primary btn-tf-sm text-center" data-bs-toggle="modal" data-bs-target="#updateStockModal">
               <i class="bi bi-plus-lg me-1"></i> Adjust Stock
             </button>
           </div>
@@ -136,8 +135,8 @@
           <div class="row g-3 align-items-center">
             <div class="col-md-4">
               <div class="input-group">
-                <span class="input-group-text bg-card border-tf text-muted-tf"><i class="bi bi-search"></i></span>
-                <input type="text" class="form-control-tf border-start-0" id="inv-search-input" placeholder="Search by shade code or name...">
+                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control-tf" id="inv-search-input" placeholder="Search by shade code or name...">
               </div>
             </div>
 
@@ -167,6 +166,11 @@
 
         <!-- Inventory Table -->
         <div class="card border-tf bg-surface rounded-4 overflow-hidden shadow-sm">
+          <!-- Mobile Horizontal Scroll Indicator -->
+          <div class="d-md-none px-3 py-2 border-bottom border-tf bg-surface d-flex align-items-center justify-content-between font-tech text-muted-tf" style="font-size: 0.74rem;">
+            <span class="d-inline-flex align-items-center gap-1"><i class="bi bi-arrow-left-right text-accent"></i> Scroll sideways to view all columns</span>
+            <span class="badge bg-card text-muted-tf border border-tf font-tech">8 Columns</span>
+          </div>
           <div class="table-responsive">
             <table class="table table-tf mb-0">
               <thead>
@@ -475,6 +479,11 @@
       </div>
     </div>
   </div>
+
+  <!-- Back to Top Button -->
+  <button id="btn-back-to-top" class="btn-back-to-top" type="button" aria-label="Back to top" title="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
 
   <script src="../assets/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/main.js"></script>

@@ -1488,6 +1488,104 @@ a.text-accent:hover,
 }
 
 /* ==========================================================================
+   Auth Pages (Login, Signup, Forgot Password) Button Alignment & Responsiveness
+   ========================================================================== */
+.auth-card {
+  width: 100%;
+}
+
+.btn-toggle-password {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0 !important;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: var(--tf-transition);
+}
+
+.btn-toggle-password:hover {
+  color: var(--tf-accent) !important;
+}
+
+.auth-social-buttons {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.auth-social-buttons .btn-tf-outline {
+  flex: 1 1 0;
+  width: 50%;
+  min-width: 0;
+  padding: 0.65rem 1rem;
+  font-size: 0.88rem;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* Mobile Alignment for Login & Signup Page Buttons */
+@media (max-width: 575.98px) {
+  .auth-card {
+    padding: 1.5rem 1.25rem !important;
+  }
+
+  .auth-card .btn-tf-primary {
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 0.85rem 1.25rem !important;
+    font-size: 0.92rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .auth-social-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+
+  .auth-social-buttons .btn-tf-outline {
+    flex: 1 1 0 !important;
+    width: 50% !important;
+    min-width: 0 !important;
+    padding: 0.65rem 0.5rem !important;
+    font-size: 0.84rem !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+
+  .auth-social-buttons .btn-tf-outline i {
+    font-size: 1.05rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .auth-social-buttons {
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+  }
+
+  .auth-social-buttons .btn-tf-outline {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+}
+
+/* ==========================================================================
    Back to Top Floating Button
    ========================================================================== */
 .btn-back-to-top {
